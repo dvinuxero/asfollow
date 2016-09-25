@@ -1,0 +1,12 @@
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Data.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Data.pdb
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Data.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Entity.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Entity.pdb
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Entity.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.vbprojResolveAssemblyReference.cache
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.Resources.resources
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.vbproj.GenerateResource.Cache
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.pdb
