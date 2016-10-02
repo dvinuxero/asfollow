@@ -13,3 +13,6 @@ C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\obj\Debug\Business.
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\obj\Debug\Business.dll
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\obj\Debug\Business.xml
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\obj\Debug\Business.pdb
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\bin\Debug\EntityFramework.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\bin\Debug\EntityFramework.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Business\bin\Debug\Business.dll.config

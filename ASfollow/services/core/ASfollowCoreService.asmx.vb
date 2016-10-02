@@ -19,28 +19,19 @@ Public Class ASfollowCoreService
     End Function
 
     <WebMethod()> _
-    Public Overloads Function addActionByName(name As String) As String
-        Dim action As Action = New ActionBuilder().createAction(name)
+    Public Overloads Function addActionByName(name As String, unitId As Long) As String
+        Dim action As action = New ActionBuilder().createAction(name, unitId)
 
         ActionBO.getInstance().addAction(action)
 
-        Return action.id
+        Return action.action_id
     End Function
 
     <WebMethod()> _
-    Public Overloads Function addActionByNameAndSteps(name As String, steps As List(Of [Step])) As String
-        Dim action As Action = New ActionBuilder().createAction(name, steps)
+    Public Overloads Function getActionByName(name As String) As action
+        Dim action As action = Nothing
 
-        ActionBO.getInstance().addAction(action)
-
-        Return action.id
-    End Function
-
-    <WebMethod()> _
-    Public Overloads Function getActionByName(name As String) As Action
-        Dim action As Action = Nothing
-
-        For Each actionAux As Action In ActionBO.getInstance().getActions()
+        For Each actionAux As action In ActionBO.getInstance().getActions()
             If (actionAux.name.ToLower().Equals(name.ToLower())) Then
                 action = actionAux
             End If

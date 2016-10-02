@@ -43,8 +43,16 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,8 +70,25 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Action.vb" />
+    <Compile Include="action.vb">
+      <DependentUpon>ASfollowEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="ActionBuilder.vb" />
+    <Compile Include="ASfollowEntities.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASfollowEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ASfollowEntities.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASfollowEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ASfollowEntities.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ASfollowEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -79,8 +104,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Step.vb" />
+    <Compile Include="step.vb">
+      <DependentUpon>ASfollowEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="StepBuilder.vb" />
+    <Compile Include="tag.vb">
+      <DependentUpon>ASfollowEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="unit.vb">
+      <DependentUpon>ASfollowEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="unit_type.vb">
+      <DependentUpon>ASfollowEntities.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -91,6 +127,26 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="ASfollowEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ASfollowEntities.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ASfollowEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ASfollowEntities.edmx</DependentUpon>
+      <LastGenOutput>ASfollowEntities.Context.vb</LastGenOutput>
+    </None>
+    <None Include="ASfollowEntities.edmx.diagram">
+      <DependentUpon>ASfollowEntities.edmx</DependentUpon>
+    </None>
+    <None Include="ASfollowEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ASfollowEntities.edmx</DependentUpon>
+      <LastGenOutput>ASfollowEntities.vb</LastGenOutput>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -100,6 +156,10 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

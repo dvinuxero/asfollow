@@ -6,3 +6,7 @@ C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.vbpr
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.dll
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.xml
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.pdb
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\EntityFramework.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\EntityFramework.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.vbprojResolveAssemblyReference.cache
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\Entity.dll.config

@@ -16,11 +16,11 @@ Public Class ActionBO
         Return instance
     End Function
 
-    Public Sub addAction(newAction As Action)
+    Public Sub addAction(newAction As action)
         ActionDAO.getInstance().addAction(newAction)
     End Sub
 
-    Public Function getActions() As List(Of Action)
+    Public Function getActions() As List(Of action)
         Return ActionDAO.getInstance().getActions()
     End Function
 

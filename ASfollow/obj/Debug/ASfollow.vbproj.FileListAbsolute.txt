@@ -16,3 +16,5 @@ C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\ASfollow\bin\Entity.xml
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\ASfollow\bin\Data.pdb
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\ASfollow\bin\Data.xml
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\ASfollow\obj\Debug\ASfollow.vbprojResolveAssemblyReference.cache
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\ASfollow\bin\EntityFramework.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\ASfollow\bin\EntityFramework.xml

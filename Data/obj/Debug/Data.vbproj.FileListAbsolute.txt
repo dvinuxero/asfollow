@@ -10,3 +10,6 @@ C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.vbproj.G
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.dll
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.xml
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\obj\Debug\Data.pdb
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\EntityFramework.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\EntityFramework.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Data\bin\Debug\Data.dll.config

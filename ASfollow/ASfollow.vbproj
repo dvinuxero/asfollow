@@ -83,8 +83,10 @@
   <ItemGroup>
     <Content Include="ASfollowService.asmx" />
     <Content Include="services\core\ASfollowCoreService.asmx" />
-    <Content Include="steps.txt" />
-    <Content Include="Web.config" />
+    <Content Include="todos.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ASfollowService.asmx.vb">

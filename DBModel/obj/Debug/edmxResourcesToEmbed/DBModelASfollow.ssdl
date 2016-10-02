@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="asfollowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="asfollowModelStoreContainer">
+    <EntitySet Name="action" EntityType="asfollowModel.Store.action" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="step" EntityType="asfollowModel.Store.step" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tag" EntityType="asfollowModel.Store.tag" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unit" EntityType="asfollowModel.Store.unit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="unit_type" EntityType="asfollowModel.Store.unit_type" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="action">
+    <Key>
+      <PropertyRef Name="action_id" />
+    </Key>
+    <Property Name="action_id" Type="bigint" Nullable="false" />
+    <Property Name="unit_id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="step">
+    <Key>
+      <PropertyRef Name="step_id" />
+    </Key>
+    <Property Name="step_id" Type="bigint" Nullable="false" />
+    <Property Name="action_id" Type="bigint" Nullable="false" />
+    <Property Name="tag_id" Type="bigint" />
+    <Property Name="text" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="priority" Type="int" />
+    <Property Name="cron" Type="varchar" MaxLength="150" />
+    <Property Name="amount" Type="int" />
+    <Property Name="checked" Type="varchar" MaxLength="1" />
+    <Property Name="description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tag">
+    <Key>
+      <PropertyRef Name="tag_id" />
+    </Key>
+    <Property Name="tag_id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="color" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="unit">
+    <Key>
+      <PropertyRef Name="unit_id" />
+    </Key>
+    <Property Name="unit_id" Type="bigint" Nullable="false" />
+    <Property Name="type_id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="unit_type">
+    <Key>
+      <PropertyRef Name="type_id" />
+    </Key>
+    <Property Name="type_id" Type="bigint" Nullable="false" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="picture_url" Type="varchar" MaxLength="150" />
+  </EntityType>
+</Schema>

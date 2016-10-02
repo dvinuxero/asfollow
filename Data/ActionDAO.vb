@@ -4,10 +4,7 @@ Public Class ActionDAO
 
     Private Shared instance As ActionDAO
 
-    Private actions As List(Of Action)
-
     Private Sub New()
-        actions = New List(Of Action)
     End Sub
 
     Public Shared Function getInstance() As ActionDAO
@@ -18,13 +15,14 @@ Public Class ActionDAO
         Return instance
     End Function
 
-    Public Sub addAction(newAction As Action)
-        newAction.setNewId(ActionSequenceService.getInstance().getNewSequenceId())
-        actions.Add(newAction)
+    Public Sub addAction(newAction As action)
+        newAction.action_id = SequenceService.getInstance().getNextId(GetType(action))
+        DataBase.getInstance().connectionDataModel.action.Add(newAction)
+        DataBase.getInstance().connectionDataModel.SaveChanges()
     End Sub
 
-    Public Function getActions() As List(Of Action)
-        Return actions
+    Public Function getActions() As List(Of action)
+        Return DataBase.getInstance().connectionDataModel.action.ToList()
     End Function
 
 End Class

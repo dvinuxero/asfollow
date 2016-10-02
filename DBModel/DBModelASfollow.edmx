@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="asfollowModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="asfollowModelStoreContainer">
+          <EntitySet Name="action" EntityType="asfollowModel.Store.action" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="step" EntityType="asfollowModel.Store.step" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tag" EntityType="asfollowModel.Store.tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="unit" EntityType="asfollowModel.Store.unit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="unit_type" EntityType="asfollowModel.Store.unit_type" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="action">
+          <Key>
+            <PropertyRef Name="action_id" />
+          </Key>
+          <Property Name="action_id" Type="bigint" Nullable="false" />
+          <Property Name="unit_id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="step">
+          <Key>
+            <PropertyRef Name="step_id" />
+          </Key>
+          <Property Name="step_id" Type="bigint" Nullable="false" />
+          <Property Name="action_id" Type="bigint" Nullable="false" />
+          <Property Name="tag_id" Type="bigint" />
+          <Property Name="text" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="priority" Type="int" />
+          <Property Name="cron" Type="varchar" MaxLength="150" />
+          <Property Name="amount" Type="int" />
+          <Property Name="checked" Type="varchar" MaxLength="1" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tag">
+          <Key>
+            <PropertyRef Name="tag_id" />
+          </Key>
+          <Property Name="tag_id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="color" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="unit">
+          <Key>
+            <PropertyRef Name="unit_id" />
+          </Key>
+          <Property Name="unit_id" Type="bigint" Nullable="false" />
+          <Property Name="type_id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="unit_type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="picture_url" Type="varchar" MaxLength="150" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="asfollowModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="asfollowEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="action" EntityType="asfollowModel.action" />
+          <EntitySet Name="step" EntityType="asfollowModel.step" />
+          <EntitySet Name="tag" EntityType="asfollowModel.tag" />
+          <EntitySet Name="unit" EntityType="asfollowModel.unit" />
+          <EntitySet Name="unit_type" EntityType="asfollowModel.unit_type" />
+        </EntityContainer>
+        <EntityType Name="action">
+          <Key>
+            <PropertyRef Name="action_id" />
+          </Key>
+          <Property Name="action_id" Type="Int64" Nullable="false" />
+          <Property Name="unit_id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="step">
+          <Key>
+            <PropertyRef Name="step_id" />
+          </Key>
+          <Property Name="step_id" Type="Int64" Nullable="false" />
+          <Property Name="action_id" Type="Int64" Nullable="false" />
+          <Property Name="tag_id" Type="Int64" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="priority" Type="Int32" />
+          <Property Name="cron" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="checked" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tag">
+          <Key>
+            <PropertyRef Name="tag_id" />
+          </Key>
+          <Property Name="tag_id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="color" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="unit">
+          <Key>
+            <PropertyRef Name="unit_id" />
+          </Key>
+          <Property Name="unit_id" Type="Int64" Nullable="false" />
+          <Property Name="type_id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="unit_type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="type_id" Type="Int64" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="picture_url" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="asfollowModelStoreContainer" CdmEntityContainer="asfollowEntities">
+          <EntitySetMapping Name="action">
+            <EntityTypeMapping TypeName="asfollowModel.action">
+              <MappingFragment StoreEntitySet="action">
+                <ScalarProperty Name="action_id" ColumnName="action_id" />
+                <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="step">
+            <EntityTypeMapping TypeName="asfollowModel.step">
+              <MappingFragment StoreEntitySet="step">
+                <ScalarProperty Name="step_id" ColumnName="step_id" />
+                <ScalarProperty Name="action_id" ColumnName="action_id" />
+                <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="cron" ColumnName="cron" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="checked" ColumnName="checked" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tag">
+            <EntityTypeMapping TypeName="asfollowModel.tag">
+              <MappingFragment StoreEntitySet="tag">
+                <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="color" ColumnName="color" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unit">
+            <EntityTypeMapping TypeName="asfollowModel.unit">
+              <MappingFragment StoreEntitySet="unit">
+                <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="unit_type">
+            <EntityTypeMapping TypeName="asfollowModel.unit_type">
+              <MappingFragment StoreEntitySet="unit_type">
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="picture_url" ColumnName="picture_url" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

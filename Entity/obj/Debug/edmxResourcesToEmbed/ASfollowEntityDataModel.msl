@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ASfollowModelStoreContainer" CdmEntityContainer="ASfollowEntities">
+    <EntitySetMapping Name="action">
+      <EntityTypeMapping TypeName="ASfollowModel.action">
+        <MappingFragment StoreEntitySet="action">
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="step">
+      <EntityTypeMapping TypeName="ASfollowModel.step">
+        <MappingFragment StoreEntitySet="step">
+          <ScalarProperty Name="step_id" ColumnName="step_id" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+          <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="priority" ColumnName="priority" />
+          <ScalarProperty Name="cron" ColumnName="cron" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="checked" ColumnName="checked" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tag">
+      <EntityTypeMapping TypeName="ASfollowModel.tag">
+        <MappingFragment StoreEntitySet="tag">
+          <ScalarProperty Name="tag_id" ColumnName="tag_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="color" ColumnName="color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unit">
+      <EntityTypeMapping TypeName="ASfollowModel.unit">
+        <MappingFragment StoreEntitySet="unit">
+          <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unit_type">
+      <EntityTypeMapping TypeName="ASfollowModel.unit_type">
+        <MappingFragment StoreEntitySet="unit_type">
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="picture_url" ColumnName="picture_url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

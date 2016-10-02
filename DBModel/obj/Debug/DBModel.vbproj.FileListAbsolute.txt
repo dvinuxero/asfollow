@@ -1,0 +1,12 @@
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\bin\Debug\DBModel.dll.config
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\bin\Debug\DBModel.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\bin\Debug\DBModel.pdb
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\bin\Debug\DBModel.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\bin\Debug\EntityFramework.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\bin\Debug\EntityFramework.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\obj\Debug\DBModel.vbprojResolveAssemblyReference.cache
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\obj\Debug\DBModel.Resources.resources
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\obj\Debug\DBModel.vbproj.GenerateResource.Cache
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\obj\Debug\DBModel.dll
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\obj\Debug\DBModel.xml
+C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\DBModel\obj\Debug\DBModel.pdb
