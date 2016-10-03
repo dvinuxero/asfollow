@@ -111,9 +111,12 @@
     <Compile Include="tag.vb">
       <DependentUpon>ASfollowEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="TagBuilder.vb" />
     <Compile Include="unit.vb">
       <DependentUpon>ASfollowEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="UnitBuilder.vb" />
+    <Compile Include="UnitTypeBuilder.vb" />
     <Compile Include="unit_type.vb">
       <DependentUpon>ASfollowEntities.tt</DependentUpon>
     </Compile>

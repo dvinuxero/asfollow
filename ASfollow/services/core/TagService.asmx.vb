@@ -10,7 +10,7 @@ Imports Business
 <System.Web.Services.WebService(Namespace:="http://tempuri.org/")> _
 <System.Web.Services.WebServiceBinding(ConformsTo:=WsiProfiles.BasicProfile1_1)> _
 <ToolboxItem(False)> _
-Public Class ASfollowCoreService
+Public Class TagService
     Inherits System.Web.Services.WebService
 
     <WebMethod()> _
@@ -19,25 +19,26 @@ Public Class ASfollowCoreService
     End Function
 
     <WebMethod()> _
-    Public Overloads Function addActionByName(name As String, unitId As Long) As String
-        Dim action As action = New ActionBuilder().createAction(name, unitId)
+    Public Overloads Function addTagByName(name As String) As tag
+        Dim tag As tag = New TagBuilder().createTag(name)
 
-        ActionBO.getInstance().addAction(action)
+        TagBO.getInstance().addTag(tag)
 
-        Return action.action_id
+        Return tag
     End Function
 
     <WebMethod()> _
-    Public Overloads Function getActionByName(name As String) As action
-        Dim action As action = Nothing
+    Public Overloads Function addTagByNameAndColor(name As String, color As String) As tag
+        Dim tag As tag = New TagBuilder().createTag(name, color)
 
-        For Each actionAux As action In ActionBO.getInstance().getActions()
-            If (actionAux.name.ToLower().Equals(name.ToLower())) Then
-                action = actionAux
-            End If
-        Next
+        TagBO.getInstance().addTag(tag)
 
-        Return action
+        Return tag
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function getTags() As List(Of tag)
+        Return TagBO.getInstance().getTags()
     End Function
 
 End Class

@@ -21,8 +21,31 @@ Public Class ActionDAO
         DataBase.getInstance().connectionDataModel.SaveChanges()
     End Sub
 
-    Public Function getActions() As List(Of action)
-        Return DataBase.getInstance().connectionDataModel.action.ToList()
+    Public Function getActionByName(mName As String) As action
+        Dim resultAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where name = mName).First()
+
+        If (resultAction IsNot Nothing) Then
+            Return New ActionBuilder().createAction(resultAction.name, resultAction.unit_id, resultAction.action_id)
+        End If
+
+        Return Nothing
+    End Function
+
+    Public Function getActionsByUnitId(unitId As Long) As List(Of action)
+        Dim resultsAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where unit_id = unitId).ToList()
+
+        If (resultsAction IsNot Nothing) Then
+            If (resultsAction.Count > 0) Then
+                Dim listOfActions As List(Of action) = New List(Of action)
+                For Each resultAction In resultsAction
+                    listOfActions.Add(New ActionBuilder().createAction(resultAction.name, resultAction.unit_id, resultAction.action_id))
+                Next
+
+                Return listOfActions
+            End If
+        End If
+
+        Return Nothing
     End Function
 
 End Class

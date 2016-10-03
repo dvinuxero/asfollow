@@ -11,6 +11,9 @@ Public Class SequenceService
 
         sequences.Add(GetType(action), getLastId(GetType(action)))
         sequences.Add(GetType([step]), getLastId(GetType([step])))
+        sequences.Add(GetType(tag), getLastId(GetType(tag)))
+        sequences.Add(GetType(unit), getLastId(GetType(unit)))
+        sequences.Add(GetType(unit_type), getLastId(GetType(unit_type)))
     End Sub
 
     Public Shared Function getInstance() As SequenceService
@@ -43,7 +46,18 @@ Public Class SequenceService
 
                 Case GetType([step])
                     lastId = (From s In DataBase.getInstance().connectionDataModel.step.ToList() Select s.action_id).Max()
+
+                Case GetType(tag)
+                    lastId = (From t In DataBase.getInstance().connectionDataModel.tag.ToList() Select t.tag_id).Max()
+
+                Case GetType(unit)
+                    lastId = (From u In DataBase.getInstance().connectionDataModel.unit.ToList() Select u.unit_id).Max()
+
+                Case GetType(unit_type)
+                    lastId = (From ut In DataBase.getInstance().connectionDataModel.unit_type.ToList() Select ut.type_id).Max()
+
                 Case Else
+                    Throw New InvalidOperationException("type no specificable")
 
             End Select
         Catch ex As InvalidOperationException

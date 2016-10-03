@@ -19,6 +19,15 @@
         Return Me.action
     End Function
 
+    Public Function createAction(name As String, unitId As Long, actionId As Long) As action
+        Me.action = New action()
+        Me.action.name = name
+        Me.action.unit_id = unitId
+        Me.action.action_id = actionId
+
+        Return Me.action
+    End Function
+
     Public Function addName(name As String) As action
         If (Me.action IsNot Nothing) Then
             Me.action.name = name

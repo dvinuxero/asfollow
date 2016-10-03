@@ -88,6 +88,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SequenceService.vb" />
+    <Compile Include="TagDAO.vb" />
+    <Compile Include="UnitDAO.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -1,3 +1,6 @@
 ﻿TODO:
 -logotipo
 -interfaz
+-pooling connection to db
+-lazy queries
+-1 query para traer joins

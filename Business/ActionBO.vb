@@ -20,8 +20,12 @@ Public Class ActionBO
         ActionDAO.getInstance().addAction(newAction)
     End Sub
 
-    Public Function getActions() As List(Of action)
-        Return ActionDAO.getInstance().getActions()
+    Public Function getActionByName(mName As String) As action
+        Return ActionDAO.getInstance().getActionByName(mName)
+    End Function
+
+    Public Function getActionsByUnitId(unitId As Long) As List(Of action)
+        Return ActionDAO.getInstance().getActionsByUnitId(unitId)
     End Function
 
 End Class
