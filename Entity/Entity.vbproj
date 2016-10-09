@@ -89,6 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ASfollowEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="exceptions\NotFoundException.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

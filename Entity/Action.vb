@@ -15,4 +15,8 @@ Partial Public Class action
     Public Property unit_id As Long
     Public Property name As String
 
+    Public Overloads Function toString() As String
+        Return Me.name
+    End Function
+
 End Class

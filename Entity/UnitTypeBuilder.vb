@@ -26,7 +26,7 @@
         Return Me.unitType
     End Function
 
-    Public Function createUnitType(name As String, pictureUrl As String, typeId As Integer) As unit_type
+    Public Function createUnitType(name As String, pictureUrl As String, typeId As Long) As unit_type
         Me.unitType = New unit_type()
         Me.unitType.name = name
         Me.unitType.picture_url = pictureUrl

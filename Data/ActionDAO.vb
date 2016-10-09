@@ -22,28 +22,34 @@ Public Class ActionDAO
     End Sub
 
     Public Function getActionByName(mName As String) As action
-        Dim resultAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where name = mName).First()
+        Try
+            Dim resultAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where name = mName).First()
 
-        If (resultAction IsNot Nothing) Then
-            Return New ActionBuilder().createAction(resultAction.name, resultAction.unit_id, resultAction.action_id)
-        End If
+            If (resultAction IsNot Nothing) Then
+                Return New ActionBuilder().createAction(resultAction.name, resultAction.unit_id, resultAction.action_id)
+            End If
+        Catch ex As Exception
+        End Try
 
         Return Nothing
     End Function
 
     Public Function getActionsByUnitId(unitId As Long) As List(Of action)
-        Dim resultsAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where unit_id = unitId).ToList()
+        Try
+            Dim resultsAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where unit_id = unitId).ToList()
 
-        If (resultsAction IsNot Nothing) Then
-            If (resultsAction.Count > 0) Then
-                Dim listOfActions As List(Of action) = New List(Of action)
-                For Each resultAction In resultsAction
-                    listOfActions.Add(New ActionBuilder().createAction(resultAction.name, resultAction.unit_id, resultAction.action_id))
-                Next
+            If (resultsAction IsNot Nothing) Then
+                If (resultsAction.Count > 0) Then
+                    Dim listOfActions As List(Of action) = New List(Of action)
+                    For Each resultAction In resultsAction
+                        listOfActions.Add(New ActionBuilder().createAction(resultAction.name, resultAction.unit_id, resultAction.action_id))
+                    Next
 
-                Return listOfActions
+                    Return listOfActions
+                End If
             End If
-        End If
+        Catch ex As Exception
+        End Try
 
         Return Nothing
     End Function

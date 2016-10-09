@@ -9,16 +9,29 @@
 
 Imports System
 Imports System.Collections.Generic
+Imports System.Text
 
 Partial Public Class [step]
-    Public Property step_id As Long
-    Public Property action_id As Long
+    Public Property step_id As Long 'no null
+    Public Property action_id As Long 'no null
     Public Property tag_id As Nullable(Of Long)
-    Public Property text As String
+    Public Property text As String 'no null
     Public Property priority As Nullable(Of Integer)
     Public Property cron As String
     Public Property amount As Nullable(Of Integer)
     Public Property checked As String
     Public Property description As String
+
+    Public Overloads Function toString() As String
+        Dim body As New StringBuilder("")
+
+        body.Append(Me.text)
+
+        If (Me.amount IsNot Nothing And Me.amount <> 0) Then
+            body.Append(" ($").Append(Me.amount.ToString()).Append(")")
+        End If
+
+        Return body.ToString()
+    End Function
 
 End Class

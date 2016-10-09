@@ -4,3 +4,9 @@
 -pooling connection to db
 -lazy queries
 -1 query para traer joins
+-script create tables automatico
+-script load data automatico
+
+M D H m s
+* * * * *
+* 1 10 23 00 -> 1ero de cada mes a las 10:23:00hs

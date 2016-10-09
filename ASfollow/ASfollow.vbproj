@@ -83,6 +83,7 @@
   <ItemGroup>
     <Content Include="ASfollowService.asmx" />
     <Content Include="services\core\ActionService.asmx" />
+    <Content Include="services\core\StepService.asmx" />
     <Content Include="services\core\TagService.asmx" />
     <Content Include="services\core\UnitService.asmx" />
     <Content Include="todos.txt" />
@@ -117,6 +118,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="services\core\StepService.asmx.vb">
+      <DependentUpon>StepService.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="services\core\TagService.asmx.vb">
       <DependentUpon>TagService.asmx</DependentUpon>
