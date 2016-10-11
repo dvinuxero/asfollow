@@ -21,6 +21,25 @@ Public Class ActionDAO
         DataBase.getInstance().connectionDataModel.SaveChanges()
     End Sub
 
+    Public Sub updateAction(updatedAction As action)
+        Dim oldAction As action = DataBase.getInstance().connectionDataModel.action.Find(updatedAction.action_id)
+
+        If (oldAction IsNot Nothing) Then
+            oldAction.name = updatedAction.name
+            oldAction.unit_id = updatedAction.unit_id
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
+    Public Sub deleteAction(deletedAction As action)
+        Dim oldAction As action = DataBase.getInstance().connectionDataModel.action.Find(deletedAction.action_id)
+
+        If (oldAction IsNot Nothing) Then
+            DataBase.getInstance().connectionDataModel.action.Remove(oldAction)
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
     Public Function getActionByName(mName As String) As action
         Try
             Dim resultAction = (From a In DataBase.getInstance().connectionDataModel.action Select a.action_id, a.name, a.unit_id Where name = mName).First()

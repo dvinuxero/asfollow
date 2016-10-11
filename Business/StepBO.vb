@@ -20,6 +20,14 @@ Public Class StepBO
         StepDAO.getInstance().addStep(newStep)
     End Sub
 
+    Public Sub updateStep(updatedStep As [step])
+        StepDAO.getInstance().updateStep(updatedStep)
+    End Sub
+
+    Public Sub deleteStep(deletedStep As [step])
+        StepDAO.getInstance().deleteStep(deletedStep)
+    End Sub
+
     Public Function getStepByStepId(stepId As Integer) As [step]
         Return StepDAO.getInstance().getStepByStepId(stepId)
     End Function

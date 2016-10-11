@@ -27,6 +27,44 @@ Public Class UnitDAO
         DataBase.getInstance().connectionDataModel.SaveChanges()
     End Sub
 
+    Public Sub updateUnit(updatedUnit As unit)
+        Dim oldUnit As unit = DataBase.getInstance().connectionDataModel.unit.Find(updatedUnit.unit_id)
+
+        If (oldUnit IsNot Nothing) Then
+            oldUnit.name = updatedUnit.name
+            oldUnit.type_id = updatedUnit.type_id
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
+    Public Sub deleteUnit(deletedUnit As unit)
+        Dim oldUnit As unit = DataBase.getInstance().connectionDataModel.unit.Find(deletedUnit.unit_id)
+
+        If (oldUnit IsNot Nothing) Then
+            DataBase.getInstance().connectionDataModel.unit.Remove(oldUnit)
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
+    Public Sub updateUnitType(updatedUnitType As unit_type)
+        Dim oldUnitType As unit_type = DataBase.getInstance().connectionDataModel.unit_type.Find(updatedUnitType.type_id)
+
+        If (oldUnitType IsNot Nothing) Then
+            oldUnitType.name = updatedUnitType.name
+            oldUnitType.picture_url = updatedUnitType.picture_url
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
+    Public Sub deleteUnitType(deletedUnitType As unit_type)
+        Dim oldUnitType As unit_type = DataBase.getInstance().connectionDataModel.unit_type.Find(deletedUnitType.type_id)
+
+        If (oldUnitType IsNot Nothing) Then
+            DataBase.getInstance().connectionDataModel.unit_type.Remove(oldUnitType)
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
     Public Function getUnitByName(mName As String) As unit
         Try
             Dim resultUnit = (From u In DataBase.getInstance().connectionDataModel.unit Select u.unit_id, u.type_id, u.name Where name = mName).First()

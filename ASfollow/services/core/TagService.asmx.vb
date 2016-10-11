@@ -37,6 +37,25 @@ Public Class TagService
     End Function
 
     <WebMethod()> _
+    Public Overloads Function updateTag(name As String, color As String, tagId As Long) As Boolean
+        Dim updatedTag As tag = New TagBuilder().createTag(name, color, tagId)
+
+        TagBO.getInstance().updateTag(updatedTag)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function deleteTag(tagId As Long) As Boolean
+        Dim deletedTag As tag = New TagBuilder().createTag()
+        deletedTag.tag_id = tagId
+
+        TagBO.getInstance().deleteTag(deletedTag)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
     Public Overloads Function getTags() As List(Of tag)
         Return TagBO.getInstance().getTags()
     End Function

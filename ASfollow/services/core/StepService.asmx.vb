@@ -45,6 +45,34 @@ Public Class StepService
     End Function
 
     <WebMethod()> _
+    Public Overloads Function updateStep(stepId As Long, actionId As Integer, text As String, tagId As Integer, priority As Integer, cron As String, amount As Integer, checked As String, description As String) As Boolean
+        Dim params As Dictionary(Of String, Object) = New Dictionary(Of String, Object)
+        params.Add("step_id", stepId)
+        params.Add("tag_id", tagId)
+        params.Add("priority", priority)
+        params.Add("cron", cron)
+        params.Add("amount", amount)
+        params.Add("checked", checked)
+        params.Add("description", description)
+
+        Dim updatedStep As [step] = New StepBuilder().createStep(actionId, text, params)
+
+        StepBO.getInstance().updateStep(updatedStep)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function deleteStep(stepId As Long) As Boolean
+        Dim deletedStep As [step] = New StepBuilder().createStep()
+        deletedStep.step_id = stepId
+
+        StepBO.getInstance().deleteStep(deletedStep)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
     Public Overloads Function getStepByStepId(stepId As Integer) As [step]
         Return StepBO.getInstance().getStepByStepId(stepId)
     End Function

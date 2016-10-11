@@ -28,6 +28,25 @@ Public Class ActionService
     End Function
 
     <WebMethod()> _
+    Public Overloads Function updateAction(name As String, unitId As Long, actionId As Long) As Boolean
+        Dim updatedAction As action = New ActionBuilder().createAction(name, unitId, actionId)
+
+        ActionBO.getInstance().updateAction(updatedAction)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function deleteAction(actionId As Long) As Boolean
+        Dim deletedAction As action = New ActionBuilder().createAction()
+        deletedAction.action_id = actionId
+
+        ActionBO.getInstance().deleteAction(deletedAction)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
     Public Overloads Function getActionByName(name As String) As action
         Return ActionBO.getInstance().getActionByName(name)
     End Function

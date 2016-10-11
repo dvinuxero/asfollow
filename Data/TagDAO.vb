@@ -21,6 +21,38 @@ Public Class TagDAO
         DataBase.getInstance().connectionDataModel.SaveChanges()
     End Sub
 
+    Public Sub updateTag(updatedTag As tag)
+        Dim oldTag As tag = DataBase.getInstance().connectionDataModel.tag.Find(updatedTag.tag_id)
+
+        If (oldTag IsNot Nothing) Then
+            oldTag.color = updatedTag.color
+            oldTag.name = updatedTag.name
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
+    Public Sub deleteTag(deletedTag As tag)
+        Dim oldTag As tag = DataBase.getInstance().connectionDataModel.tag.Find(deletedTag.tag_id)
+
+        If (oldTag IsNot Nothing) Then
+            DataBase.getInstance().connectionDataModel.tag.Remove(oldTag)
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
+    Public Function getTagById(tagId As Long) As tag
+        Try
+            Dim resultAction = (From t In DataBase.getInstance().connectionDataModel.tag Select t.tag_id, t.name, t.color Where tag_id = tagId).First()
+
+            If (resultAction IsNot Nothing) Then
+                Return New TagBuilder().createTag(resultAction.name, resultAction.color, resultAction.tag_id)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Return Nothing
+    End Function
+
     Public Function getTagByName(mName As String) As tag
         Try
             Dim resultAction = (From t In DataBase.getInstance().connectionDataModel.tag Select t.tag_id, t.name, t.color Where name = mName).First()

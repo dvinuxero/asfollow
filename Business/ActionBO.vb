@@ -20,6 +20,14 @@ Public Class ActionBO
         ActionDAO.getInstance().addAction(newAction)
     End Sub
 
+    Public Sub updateAction(updatedAction As action)
+        ActionDAO.getInstance().updateAction(updatedAction)
+    End Sub
+
+    Public Sub deleteAction(deletedAction As action)
+        ActionDAO.getInstance().deleteAction(deletedAction)
+    End Sub
+
     Public Function getActionByName(mName As String) As action
         Return ActionDAO.getInstance().getActionByName(mName)
     End Function

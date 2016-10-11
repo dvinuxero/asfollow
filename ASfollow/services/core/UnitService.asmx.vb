@@ -46,6 +46,44 @@ Public Class UnitService
     End Function
 
     <WebMethod()> _
+    Public Overloads Function updateUnit(name As String, typeId As Long, unitId As Long) As Boolean
+        Dim updatedUnit As unit = New UnitBuilder().createUnit(name, typeId, unitId)
+
+        UnitBO.getInstance().updateUnit(updatedUnit)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function updateUnitType(name As String, pictureUrl As String, typeId As Long) As Boolean
+        Dim updatedUnitType As unit_type = New UnitTypeBuilder().createUnitType(name, pictureUrl, typeId)
+
+        UnitBO.getInstance().updateUnitType(updatedUnitType)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function deleteUnit(unitId As Long) As Boolean
+        Dim deletedUnit As unit = New UnitBuilder().createUnit()
+        deletedUnit.unit_id = unitId
+
+        UnitBO.getInstance().deleteUnit(deletedUnit)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function deleteUnitType(typeId As Long) As Boolean
+        Dim deletedUnitType As unit_type = New UnitTypeBuilder().createUnitType()
+        deletedUnitType.type_id = typeId
+
+        UnitBO.getInstance().deleteUnitType(deletedUnitType)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
     Public Overloads Function getUnitByName(name As String) As unit
         Return UnitBO.getInstance().getUnitByName(name)
     End Function

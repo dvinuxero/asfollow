@@ -24,6 +24,22 @@ Public Class UnitBO
         UnitDAO.getInstance().addUnitType(newUnitType)
     End Sub
 
+    Public Sub updateUnit(updatedUnit As unit)
+        UnitDAO.getInstance().updateUnit(updatedUnit)
+    End Sub
+
+    Public Sub updateUnitType(updatedUnitType As unit_type)
+        UnitDAO.getInstance().updateUnitType(updatedUnitType)
+    End Sub
+
+    Public Sub deleteUnit(deletedUnit As unit)
+        UnitDAO.getInstance().deleteUnit(deletedUnit)
+    End Sub
+
+    Public Sub deleteUnitType(deletedUnitType As unit_type)
+        UnitDAO.getInstance().deleteUnitType(deletedUnitType)
+    End Sub
+
     Public Function getUnitByName(name As String) As unit
         Return UnitDAO.getInstance().getUnitByName(name)
     End Function
