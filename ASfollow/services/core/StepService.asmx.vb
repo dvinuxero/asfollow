@@ -94,4 +94,11 @@ Public Class StepService
         Return StepBO.getInstance().getStepsByTagId(tagId)
     End Function
 
+    <WebMethod()> _
+    Public Function refreshSteps() As Boolean
+        StepBO.getInstance().refreshSteps()
+
+        Return True
+    End Function
+
 End Class

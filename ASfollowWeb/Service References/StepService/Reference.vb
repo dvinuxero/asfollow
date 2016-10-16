@@ -258,6 +258,12 @@ Namespace StepService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getStepsByTagId", ReplyAction:="*")>  _
         Function getStepsByTagIdAsync(ByVal request As StepService.getStepsByTagIdRequest) As System.Threading.Tasks.Task(Of StepService.getStepsByTagIdResponse)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/refreshSteps", ReplyAction:="*")>  _
+        Function refreshSteps() As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/refreshSteps", ReplyAction:="*")>  _
+        Function refreshStepsAsync() As System.Threading.Tasks.Task(Of Boolean)
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -1098,6 +1104,14 @@ Namespace StepService
             inValue.Body = New StepService.getStepsByTagIdRequestBody()
             inValue.Body.tagId = tagId
             Return CType(Me,StepService.StepServiceSoap).getStepsByTagIdAsync(inValue)
+        End Function
+        
+        Public Function refreshSteps() As Boolean Implements StepService.StepServiceSoap.refreshSteps
+            Return MyBase.Channel.refreshSteps
+        End Function
+        
+        Public Function refreshStepsAsync() As System.Threading.Tasks.Task(Of Boolean) Implements StepService.StepServiceSoap.refreshStepsAsync
+            Return MyBase.Channel.refreshStepsAsync
         End Function
     End Class
 End Namespace

@@ -32,12 +32,19 @@ Namespace ASfollowService
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/about", ReplyAction:="*")>  _
         Function aboutAsync(ByVal request As ASfollowService.aboutRequest) As System.Threading.Tasks.Task(Of ASfollowService.aboutResponse)
         
-        'CODEGEN: Generating message contract since element name shareInfoResult from namespace http://tempuri.org/ is not marked nillable
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfo", ReplyAction:="*")>  _
-        Function shareInfo(ByVal request As ASfollowService.shareInfoRequest) As ASfollowService.shareInfoResponse
+        'CODEGEN: Generating message contract since element name shareInfoMonthlyResult from namespace http://tempuri.org/ is not marked nillable
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfoMonthly", ReplyAction:="*")>  _
+        Function shareInfoMonthly(ByVal request As ASfollowService.shareInfoMonthlyRequest) As ASfollowService.shareInfoMonthlyResponse
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfo", ReplyAction:="*")>  _
-        Function shareInfoAsync(ByVal request As ASfollowService.shareInfoRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoResponse)
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfoMonthly", ReplyAction:="*")>  _
+        Function shareInfoMonthlyAsync(ByVal request As ASfollowService.shareInfoMonthlyRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoMonthlyResponse)
+        
+        'CODEGEN: Generating message contract since element name shareInfoUrgentResult from namespace http://tempuri.org/ is not marked nillable
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfoUrgent", ReplyAction:="*")>  _
+        Function shareInfoUrgent(ByVal request As ASfollowService.shareInfoUrgentRequest) As ASfollowService.shareInfoUrgentResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfoUrgent", ReplyAction:="*")>  _
+        Function shareInfoUrgentAsync(ByVal request As ASfollowService.shareInfoUrgentRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoUrgentResponse)
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -180,16 +187,16 @@ Namespace ASfollowService
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class shareInfoRequest
+    Partial Public Class shareInfoMonthlyRequest
         
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="shareInfo", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ASfollowService.shareInfoRequestBody
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="shareInfoMonthly", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ASfollowService.shareInfoMonthlyRequestBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As ASfollowService.shareInfoRequestBody)
+        Public Sub New(ByVal Body As ASfollowService.shareInfoMonthlyRequestBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -199,7 +206,7 @@ Namespace ASfollowService
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
      System.Runtime.Serialization.DataContractAttribute()>  _
-    Partial Public Class shareInfoRequestBody
+    Partial Public Class shareInfoMonthlyRequestBody
         
         Public Sub New()
             MyBase.New
@@ -210,16 +217,16 @@ Namespace ASfollowService
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
      System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
-    Partial Public Class shareInfoResponse
+    Partial Public Class shareInfoMonthlyResponse
         
-        <System.ServiceModel.MessageBodyMemberAttribute(Name:="shareInfoResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
-        Public Body As ASfollowService.shareInfoResponseBody
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="shareInfoMonthlyResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ASfollowService.shareInfoMonthlyResponseBody
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal Body As ASfollowService.shareInfoResponseBody)
+        Public Sub New(ByVal Body As ASfollowService.shareInfoMonthlyResponseBody)
             MyBase.New
             Me.Body = Body
         End Sub
@@ -229,18 +236,86 @@ Namespace ASfollowService
      System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
      System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
      System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class shareInfoResponseBody
+    Partial Public Class shareInfoMonthlyResponseBody
         
         <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
-        Public shareInfoResult As String
+        Public shareInfoMonthlyResult As String
         
         Public Sub New()
             MyBase.New
         End Sub
         
-        Public Sub New(ByVal shareInfoResult As String)
+        Public Sub New(ByVal shareInfoMonthlyResult As String)
             MyBase.New
-            Me.shareInfoResult = shareInfoResult
+            Me.shareInfoMonthlyResult = shareInfoMonthlyResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class shareInfoUrgentRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="shareInfoUrgent", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ASfollowService.shareInfoUrgentRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ASfollowService.shareInfoUrgentRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class shareInfoUrgentRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class shareInfoUrgentResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="shareInfoUrgentResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ASfollowService.shareInfoUrgentResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ASfollowService.shareInfoUrgentResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class shareInfoUrgentResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public shareInfoUrgentResult As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal shareInfoUrgentResult As String)
+            MyBase.New
+            Me.shareInfoUrgentResult = shareInfoUrgentResult
         End Sub
     End Class
     
@@ -322,26 +397,49 @@ Namespace ASfollowService
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function ASfollowService_ASfollowServiceSoap_shareInfo(ByVal request As ASfollowService.shareInfoRequest) As ASfollowService.shareInfoResponse Implements ASfollowService.ASfollowServiceSoap.shareInfo
-            Return MyBase.Channel.shareInfo(request)
+        Function ASfollowService_ASfollowServiceSoap_shareInfoMonthly(ByVal request As ASfollowService.shareInfoMonthlyRequest) As ASfollowService.shareInfoMonthlyResponse Implements ASfollowService.ASfollowServiceSoap.shareInfoMonthly
+            Return MyBase.Channel.shareInfoMonthly(request)
         End Function
         
-        Public Function shareInfo() As String
-            Dim inValue As ASfollowService.shareInfoRequest = New ASfollowService.shareInfoRequest()
-            inValue.Body = New ASfollowService.shareInfoRequestBody()
-            Dim retVal As ASfollowService.shareInfoResponse = CType(Me,ASfollowService.ASfollowServiceSoap).shareInfo(inValue)
-            Return retVal.Body.shareInfoResult
+        Public Function shareInfoMonthly() As String
+            Dim inValue As ASfollowService.shareInfoMonthlyRequest = New ASfollowService.shareInfoMonthlyRequest()
+            inValue.Body = New ASfollowService.shareInfoMonthlyRequestBody()
+            Dim retVal As ASfollowService.shareInfoMonthlyResponse = CType(Me,ASfollowService.ASfollowServiceSoap).shareInfoMonthly(inValue)
+            Return retVal.Body.shareInfoMonthlyResult
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
-        Function ASfollowService_ASfollowServiceSoap_shareInfoAsync(ByVal request As ASfollowService.shareInfoRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoResponse) Implements ASfollowService.ASfollowServiceSoap.shareInfoAsync
-            Return MyBase.Channel.shareInfoAsync(request)
+        Function ASfollowService_ASfollowServiceSoap_shareInfoMonthlyAsync(ByVal request As ASfollowService.shareInfoMonthlyRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoMonthlyResponse) Implements ASfollowService.ASfollowServiceSoap.shareInfoMonthlyAsync
+            Return MyBase.Channel.shareInfoMonthlyAsync(request)
         End Function
         
-        Public Function shareInfoAsync() As System.Threading.Tasks.Task(Of ASfollowService.shareInfoResponse)
-            Dim inValue As ASfollowService.shareInfoRequest = New ASfollowService.shareInfoRequest()
-            inValue.Body = New ASfollowService.shareInfoRequestBody()
-            Return CType(Me,ASfollowService.ASfollowServiceSoap).shareInfoAsync(inValue)
+        Public Function shareInfoMonthlyAsync() As System.Threading.Tasks.Task(Of ASfollowService.shareInfoMonthlyResponse)
+            Dim inValue As ASfollowService.shareInfoMonthlyRequest = New ASfollowService.shareInfoMonthlyRequest()
+            inValue.Body = New ASfollowService.shareInfoMonthlyRequestBody()
+            Return CType(Me,ASfollowService.ASfollowServiceSoap).shareInfoMonthlyAsync(inValue)
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ASfollowService_ASfollowServiceSoap_shareInfoUrgent(ByVal request As ASfollowService.shareInfoUrgentRequest) As ASfollowService.shareInfoUrgentResponse Implements ASfollowService.ASfollowServiceSoap.shareInfoUrgent
+            Return MyBase.Channel.shareInfoUrgent(request)
+        End Function
+        
+        Public Function shareInfoUrgent() As String
+            Dim inValue As ASfollowService.shareInfoUrgentRequest = New ASfollowService.shareInfoUrgentRequest()
+            inValue.Body = New ASfollowService.shareInfoUrgentRequestBody()
+            Dim retVal As ASfollowService.shareInfoUrgentResponse = CType(Me,ASfollowService.ASfollowServiceSoap).shareInfoUrgent(inValue)
+            Return retVal.Body.shareInfoUrgentResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ASfollowService_ASfollowServiceSoap_shareInfoUrgentAsync(ByVal request As ASfollowService.shareInfoUrgentRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoUrgentResponse) Implements ASfollowService.ASfollowServiceSoap.shareInfoUrgentAsync
+            Return MyBase.Channel.shareInfoUrgentAsync(request)
+        End Function
+        
+        Public Function shareInfoUrgentAsync() As System.Threading.Tasks.Task(Of ASfollowService.shareInfoUrgentResponse)
+            Dim inValue As ASfollowService.shareInfoUrgentRequest = New ASfollowService.shareInfoUrgentRequest()
+            inValue.Body = New ASfollowService.shareInfoUrgentRequestBody()
+            Return CType(Me,ASfollowService.ASfollowServiceSoap).shareInfoUrgentAsync(inValue)
         End Function
     End Class
 End Namespace

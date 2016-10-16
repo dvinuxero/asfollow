@@ -130,6 +130,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnitResult" type="tns:unit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="getUnitByName">
         <s:complexType>
           <s:sequence>
@@ -216,6 +230,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getTotalAmount">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTotalAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getTotalAmountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="pingSoapIn">
@@ -266,6 +290,12 @@
   <wsdl:message name="deleteUnitTypeSoapOut">
     <wsdl:part name="parameters" element="tns:deleteUnitTypeResponse" />
   </wsdl:message>
+  <wsdl:message name="getUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnit" />
+  </wsdl:message>
+  <wsdl:message name="getUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnitResponse" />
+  </wsdl:message>
   <wsdl:message name="getUnitByNameSoapIn">
     <wsdl:part name="parameters" element="tns:getUnitByName" />
   </wsdl:message>
@@ -302,6 +332,12 @@
   <wsdl:message name="getTotalAmountByUnitIdSoapOut">
     <wsdl:part name="parameters" element="tns:getTotalAmountByUnitIdResponse" />
   </wsdl:message>
+  <wsdl:message name="getTotalAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:getTotalAmount" />
+  </wsdl:message>
+  <wsdl:message name="getTotalAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:getTotalAmountResponse" />
+  </wsdl:message>
   <wsdl:portType name="UnitServiceSoap">
     <wsdl:operation name="ping">
       <wsdl:input message="tns:pingSoapIn" />
@@ -335,6 +371,10 @@
       <wsdl:input message="tns:deleteUnitTypeSoapIn" />
       <wsdl:output message="tns:deleteUnitTypeSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="getUnit">
+      <wsdl:input message="tns:getUnitSoapIn" />
+      <wsdl:output message="tns:getUnitSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="getUnitByName">
       <wsdl:input message="tns:getUnitByNameSoapIn" />
       <wsdl:output message="tns:getUnitByNameSoapOut" />
@@ -358,6 +398,10 @@
     <wsdl:operation name="getTotalAmountByUnitId">
       <wsdl:input message="tns:getTotalAmountByUnitIdSoapIn" />
       <wsdl:output message="tns:getTotalAmountByUnitIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTotalAmount">
+      <wsdl:input message="tns:getTotalAmountSoapIn" />
+      <wsdl:output message="tns:getTotalAmountSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="UnitServiceSoap" type="tns:UnitServiceSoap">
@@ -434,6 +478,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getUnit">
+      <soap:operation soapAction="http://tempuri.org/getUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getUnitByName">
       <soap:operation soapAction="http://tempuri.org/getUnitByName" style="document" />
       <wsdl:input>
@@ -481,6 +534,15 @@
     </wsdl:operation>
     <wsdl:operation name="getTotalAmountByUnitId">
       <soap:operation soapAction="http://tempuri.org/getTotalAmountByUnitId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalAmount">
+      <soap:operation soapAction="http://tempuri.org/getTotalAmount" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -563,6 +625,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getUnit">
+      <soap12:operation soapAction="http://tempuri.org/getUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getUnitByName">
       <soap12:operation soapAction="http://tempuri.org/getUnitByName" style="document" />
       <wsdl:input>
@@ -610,6 +681,15 @@
     </wsdl:operation>
     <wsdl:operation name="getTotalAmountByUnitId">
       <soap12:operation soapAction="http://tempuri.org/getTotalAmountByUnitId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalAmount">
+      <soap12:operation soapAction="http://tempuri.org/getTotalAmount" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

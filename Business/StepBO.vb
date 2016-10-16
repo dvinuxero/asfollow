@@ -48,4 +48,12 @@ Public Class StepBO
         Return StepDAO.getInstance().getStepsShareablesByActionId(actionId)
     End Function
 
+    Public Function getStepsUrgentsByActionId(actionId As Long) As List(Of [step])
+        Return StepDAO.getInstance().getStepsUrgentsByActionId(actionId)
+    End Function
+
+    Public Sub refreshSteps()
+        StepDAO.getInstance().refreshSteps()
+    End Sub
+
 End Class

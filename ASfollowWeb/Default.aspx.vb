@@ -11,6 +11,15 @@ Public Class _Default
     End Sub
 
     Protected Sub shareInfo_Click(sender As Object, e As EventArgs) Handles btnShareInfo.Click
-        AllServices.getInstance().shareInfo()
+        AllServices.getInstance().shareInfo(0)
     End Sub
+
+    Protected Sub shareUrgentInfo_Click(sender As Object, e As EventArgs) Handles btnShareInfo.Click
+        AllServices.getInstance().shareInfo(1)
+    End Sub
+
+    Protected Sub refreshSteps_Click(sender As Object, e As EventArgs) Handles btnShareInfo.Click
+        AllServices.getInstance().refreshSteps()
+    End Sub
+
 End Class

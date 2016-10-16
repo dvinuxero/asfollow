@@ -65,6 +65,19 @@ Public Class UnitDAO
         End If
     End Sub
 
+    Public Function getUnit(unitId As Long) As unit
+        Try
+            Dim resultUnit = (From u In DataBase.getInstance().connectionDataModel.unit Select u.unit_id, u.type_id, u.name Where unit_id = unitId).First()
+
+            If (resultUnit IsNot Nothing) Then
+                Return New UnitBuilder().createUnit(resultUnit.name, resultUnit.type_id, resultUnit.unit_id)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Return Nothing
+    End Function
+
     Public Function getUnitByName(mName As String) As unit
         Try
             Dim resultUnit = (From u In DataBase.getInstance().connectionDataModel.unit Select u.unit_id, u.type_id, u.name Where name = mName).First()
@@ -147,6 +160,24 @@ Public Class UnitDAO
     Public Function getTotalAmountByUnitId(unitId As Long) As Integer
         Try
             Return (From s In DataBase.getInstance().connectionDataModel.step Join a In DataBase.getInstance().connectionDataModel.action On s.action_id Equals a.action_id Where a.unit_id = unitId Select s.amount).Sum()
+        Catch ex As Exception
+        End Try
+
+        Return 0
+    End Function
+
+    Public Function getTotalAmount() As Integer
+        Try
+            Dim totalAmount As Integer = 0
+            Dim units As List(Of unit) = getUnits()
+
+            If (units IsNot Nothing) Then
+                For Each unit As unit In units
+                    totalAmount = totalAmount + getTotalAmountByUnitId(unit.unit_id)
+                Next
+            End If
+
+            Return totalAmount
         Catch ex As Exception
         End Try
 

@@ -26,8 +26,8 @@ body {
 .boxResume-picUrl {
     margin: 0 auto;
     display : inline-block;
-    width: 90%;
-    height : 100px;
+    width: 64px;
+    height : 64px;
 }
 
 .boxResume-rowInit {
@@ -44,21 +44,40 @@ body {
     text-align:center;
 }
 
-.shareInfo {
+.generalAction {
     width : 70px;
     height : 70px;
-    margin: auto;
-    display: block;
+    display: inline-block;
     text-align:center;
     cursor: pointer;
-
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/3/34/ISync_icon.png');
-    background-repeat: no-repeat;
+    background-position: center;
 }
 
+.refreshPic {
+    background-image: url('http://i67.tinypic.com/qyyhsp_th.jpg');
+    background-repeat: no-repeat;
+    background-color: white;
+}
 
+.sharePic {
+    background-image: url('http://oi68.tinypic.com/2vs20lk.jpg');
+    background-repeat: no-repeat;
+    background-color: white;
+}
 
+.shareUrgentPic {
+    background-image: url('http://oi64.tinypic.com/a4o9q8.jpg');
+    background-repeat: no-repeat;
+    background-color: white;
+}
 
+.boxResumeAmount {
+    text-align:left;
+}
+
+.tableResume {
+    width: 100%;
+}
 
 /*Section Actions/Steps*/
 .titleAction {

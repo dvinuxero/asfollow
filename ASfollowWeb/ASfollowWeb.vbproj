@@ -114,22 +114,25 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
-    <Content Include="Service References\ASfollowService\ASfollowService.disco" />
+    <None Include="Service References\ASfollowService\ASfollowService.disco" />
     <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.aboutResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.pingResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.shareInfoResponse.datasource">
+    <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.shareInfoMonthlyResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\ASfollowService\configuration91.svcinfo" />
-    <Content Include="Service References\ASfollowService\configuration.svcinfo" />
-    <Content Include="Service References\ASfollowService\Reference.svcmap">
+    <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.shareInfoUrgentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ASfollowService\configuration91.svcinfo" />
+    <None Include="Service References\ASfollowService\configuration.svcinfo" />
+    <None Include="Service References\ASfollowService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Service References\StepService\StepService.disco" />
     <None Include="Service References\StepService\configuration91.svcinfo" />
     <None Include="Service References\StepService\configuration.svcinfo" />
@@ -211,6 +214,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\UnitService\ASfollowWeb.UnitService.updateUnitTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\UnitService\ASfollowWeb.UnitService.getUnitResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\UnitService\UnitService.disco" />
@@ -303,7 +309,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="Service References\ASfollowService\ASfollowService.wsdl" />
+    <None Include="Service References\ASfollowService\ASfollowService.wsdl" />
     <Content Include="Service References\ActionService\ActionService.wsdl" />
     <None Include="Service References\StepService\StepService.wsdl" />
     <Content Include="Service References\StepService\ASfollowWeb.StepService.addStepByActionIdAndTextResponse.datasource">
@@ -357,6 +363,9 @@
       <Project>{4e84c418-d951-42f3-bb17-95007253ecc0}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\photos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

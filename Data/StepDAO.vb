@@ -115,7 +115,7 @@ Public Class StepDAO
 
     Public Function getStepsShareablesByActionId(actionId As Long) As List(Of [step])
         Try
-            Dim resultsStep = (From s In DataBase.getInstance().connectionDataModel.step Select s.step_id, s.action_id, s.tag_id, s.amount, s.checked, s.cron, s.description, s.priority, s.text Where action_id = actionId And cron = "Y" And checked = "N").ToList()
+            Dim resultsStep = (From s In DataBase.getInstance().connectionDataModel.step Select s.step_id, s.action_id, s.tag_id, s.amount, s.checked, s.cron, s.description, s.priority, s.text Where action_id = actionId And cron = "*" And checked = "N").ToList()
 
             If (resultsStep IsNot Nothing) Then
                 If (resultsStep.Count > 0) Then
@@ -132,5 +132,40 @@ Public Class StepDAO
 
         Return Nothing
     End Function
+
+    Public Function getStepsUrgentsByActionId(actionId As Long) As List(Of [step])
+        Try
+            Dim resultsStep = (From s In DataBase.getInstance().connectionDataModel.step Select s.step_id, s.action_id, s.tag_id, s.amount, s.checked, s.cron, s.description, s.priority, s.text Where action_id = actionId And cron = "Y" And checked = "N" And tag_id = 1).ToList()
+
+            If (resultsStep IsNot Nothing) Then
+                If (resultsStep.Count > 0) Then
+                    Dim listOfSteps As List(Of [step]) = New List(Of [step])
+                    For Each resultStep In resultsStep
+                        listOfSteps.Add(New StepBuilder().createStep(resultStep.action_id, resultStep.text, resultStep))
+                    Next
+
+                    Return listOfSteps
+                End If
+            End If
+        Catch ex As Exception
+        End Try
+
+        Return Nothing
+    End Function
+
+    Public Sub refreshSteps()
+        Try
+            Dim resultsStep = (From s In DataBase.getInstance().connectionDataModel.step Select s.step_id, s.action_id, s.tag_id, s.amount, s.checked, s.cron, s.description, s.priority, s.text Where cron = "*" And checked = "Y").ToList()
+
+            If (resultsStep IsNot Nothing) Then
+                If (resultsStep.Count > 0) Then
+                    For Each resultStep In resultsStep
+                        setStepChecked(resultStep.step_id)
+                    Next
+                End If
+            End If
+        Catch ex As Exception
+        End Try
+    End Sub
 
 End Class

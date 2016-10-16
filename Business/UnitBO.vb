@@ -40,6 +40,10 @@ Public Class UnitBO
         UnitDAO.getInstance().deleteUnitType(deletedUnitType)
     End Sub
 
+    Public Function getUnit(unitId As Long) As unit
+        Return UnitDAO.getInstance().getUnit(unitId)
+    End Function
+
     Public Function getUnitByName(name As String) As unit
         Return UnitDAO.getInstance().getUnitByName(name)
     End Function
@@ -62,6 +66,10 @@ Public Class UnitBO
 
     Public Function getTotalAmountByUnitId(unitId As Long) As Integer
         Return UnitDAO.getInstance().getTotalAmountByUnitId(unitId)
+    End Function
+
+    Public Function getTotalAmount() As Integer
+        Return UnitDAO.getInstance().getTotalAmount()
     End Function
 
 End Class

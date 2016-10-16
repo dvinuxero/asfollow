@@ -126,8 +126,27 @@ Public Class AllServices
         Return unitService.getTotalAmountByUnitId(unitId)
     End Function
 
-    Public Sub shareInfo()
-        asfollowService.shareInfo()
+    Public Function getTotalAmount() As Integer
+        Return unitService.getTotalAmount()
+    End Function
+
+    Public Sub shareInfo(actionShare As Integer)
+        Select Case actionShare
+            Case 0
+                asfollowService.shareInfoMonthly()
+            Case 1
+                asfollowService.shareInfoUrgent()
+        End Select
     End Sub
+
+    Public Sub refreshSteps()
+        stepService.refreshSteps()
+    End Sub
+
+    Public Function getUnitName(unitId As Long) As String
+        Dim unit As UnitService.unit = unitService.getUnit(unitId)
+
+        Return unit.name.ToUpper()
+    End Function
 
 End Class

@@ -29,17 +29,26 @@ Public Class EmailService
         Return instance
     End Function
 
-    Public Sub shareInfo()
-        Me.mail.From = New MailAddress("asfollow.info@gmail.com")
-        Me.mail.To.Add("villanustre@gmail.com")
-        Me.mail.Subject = "Share info ASfollow"
-        Me.mail.Body = Me.getBody()
-        Me.mail.IsBodyHtml = True
-
+    Public Sub shareInfoMonthly()
+        prepareInfo()
+        Me.mail.Body = Me.getBody(0)
         Me.smtpServer.Send(Me.mail)
     End Sub
 
-    Private Function getBody() As String
+    Public Sub shareInfoUrgent()
+        prepareInfo()
+        Me.mail.Body = Me.getBody(1)
+        Me.smtpServer.Send(Me.mail)
+    End Sub
+
+    Private Sub prepareInfo()
+        Me.mail.From = New MailAddress("asfollow.info@gmail.com")
+        Me.mail.To.Add("villanustre@gmail.com")
+        Me.mail.Subject = "Share info ASfollow"
+        Me.mail.IsBodyHtml = True
+    End Sub
+
+    Private Function getBody(actionShare As Integer) As String
         Dim body As New StringBuilder("")
 
         Dim units As List(Of unit) = UnitBO.getInstance().getUnits()
@@ -51,7 +60,13 @@ Public Class EmailService
                     body.Append("<li>Unit - ").Append("<b>").Append(unit.toString()).Append("</b></li>")
                     body.Append("<ul>")
                     For Each action As action In actions
-                        Dim steps As List(Of [step]) = StepBO.getInstance().getStepsShareablesByActionId(action.action_id)
+                        Dim steps As List(Of [step]) = Nothing
+                        Select Case actionShare
+                            Case 0
+                                steps = StepBO.getInstance().getStepsShareablesByActionId(action.action_id)
+                            Case 1
+                                steps = StepBO.getInstance().getStepsUrgentsByActionId(action.action_id)
+                        End Select
                         If (steps IsNot Nothing) Then
                             body.Append("<li>Action - ").Append("<b>").Append(action.toString()).Append("</b></li>")
                             body.Append("<ul>")

@@ -13,6 +13,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
+    <div class="boxResumeAmount">TOTAL: $<%=AllServices.getInstance().getTotalAmount().ToString()%></div>
+    <asp:Button runat="server" ID="btnRefreshSteps" CssClass="generalAction refreshPic" OnClick="refreshSteps_Click" Text="" ToolTip="Reset tareas realizadas"/>
+    <asp:Button runat="server" ID="btnShareInfo" CssClass="generalAction sharePic" OnClick="shareInfo_Click" Text="" ToolTip="Enviar acciones repetitivas"/>
+    <asp:Button runat="server" ID="btnShareUrgentInfo" CssClass="generalAction shareUrgentPic" OnClick="shareUrgentInfo_Click" Text="" ToolTip="Enviar acciones urgentes"/>
+
     <div class="centralContent">
         
         <asp:Button runat="server" ID="btnGoToActions" style="display:none;" OnClick="btnGoToActions_Click" CommandArgument="" />
@@ -20,7 +25,7 @@
 
         <%For Each unit As Entity.unit In AllServices.getInstance().getUnits()%>
             <div class="boxResume" onclick="document.getElementById('unitIdHidden').value='<%=unit.unit_id.ToString()%>';document.getElementById('<%= btnGoToActions.ClientID%>').click()">
-                <table>
+                <table class="tableResume">
                     <tr class="boxResume-rowInit">
                         <td><%=unit.name.ToUpper()%></td>
                     </tr>
@@ -33,8 +38,6 @@
                 </table>
             </div>
         <%Next%>
-
-        <asp:Button runat="server" ID="btnShareInfo" CssClass="shareInfo" OnClick="shareInfo_Click" Text=""/>
     </div>
     </form>
 </body>

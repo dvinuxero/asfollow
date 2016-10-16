@@ -245,6 +245,13 @@ Namespace UnitService
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/deleteUnitType", ReplyAction:="*")>  _
         Function deleteUnitTypeAsync(ByVal typeId As Long) As System.Threading.Tasks.Task(Of Boolean)
         
+        'CODEGEN: Generating message contract since element name getUnitResult from namespace http://tempuri.org/ is not marked nillable
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getUnit", ReplyAction:="*")>  _
+        Function getUnit(ByVal request As UnitService.getUnitRequest) As UnitService.getUnitResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getUnit", ReplyAction:="*")>  _
+        Function getUnitAsync(ByVal request As UnitService.getUnitRequest) As System.Threading.Tasks.Task(Of UnitService.getUnitResponse)
+        
         'CODEGEN: Generating message contract since element name name from namespace http://tempuri.org/ is not marked nillable
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getUnitByName", ReplyAction:="*")>  _
         Function getUnitByName(ByVal request As UnitService.getUnitByNameRequest) As UnitService.getUnitByNameResponse
@@ -285,6 +292,12 @@ Namespace UnitService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getTotalAmountByUnitId", ReplyAction:="*")>  _
         Function getTotalAmountByUnitIdAsync(ByVal unitId As Long) As System.Threading.Tasks.Task(Of Integer)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getTotalAmount", ReplyAction:="*")>  _
+        Function getTotalAmount() As Integer
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/getTotalAmount", ReplyAction:="*")>  _
+        Function getTotalAmountAsync() As System.Threading.Tasks.Task(Of Integer)
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -756,6 +769,82 @@ Namespace UnitService
         Public Sub New(ByVal updateUnitTypeResult As Boolean)
             MyBase.New
             Me.updateUnitTypeResult = updateUnitTypeResult
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class getUnitRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="getUnit", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As UnitService.getUnitRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As UnitService.getUnitRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class getUnitRequestBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(Order:=0)>  _
+        Public unitId As Long
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal unitId As Long)
+            MyBase.New
+            Me.unitId = unitId
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class getUnitResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="getUnitResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As UnitService.getUnitResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As UnitService.getUnitResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class getUnitResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public getUnitResult As UnitService.unit
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal getUnitResult As UnitService.unit)
+            MyBase.New
+            Me.getUnitResult = getUnitResult
         End Sub
     End Class
     
@@ -1331,6 +1420,31 @@ Namespace UnitService
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function UnitService_UnitServiceSoap_getUnit(ByVal request As UnitService.getUnitRequest) As UnitService.getUnitResponse Implements UnitService.UnitServiceSoap.getUnit
+            Return MyBase.Channel.getUnit(request)
+        End Function
+        
+        Public Function getUnit(ByVal unitId As Long) As UnitService.unit
+            Dim inValue As UnitService.getUnitRequest = New UnitService.getUnitRequest()
+            inValue.Body = New UnitService.getUnitRequestBody()
+            inValue.Body.unitId = unitId
+            Dim retVal As UnitService.getUnitResponse = CType(Me,UnitService.UnitServiceSoap).getUnit(inValue)
+            Return retVal.Body.getUnitResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function UnitService_UnitServiceSoap_getUnitAsync(ByVal request As UnitService.getUnitRequest) As System.Threading.Tasks.Task(Of UnitService.getUnitResponse) Implements UnitService.UnitServiceSoap.getUnitAsync
+            Return MyBase.Channel.getUnitAsync(request)
+        End Function
+        
+        Public Function getUnitAsync(ByVal unitId As Long) As System.Threading.Tasks.Task(Of UnitService.getUnitResponse)
+            Dim inValue As UnitService.getUnitRequest = New UnitService.getUnitRequest()
+            inValue.Body = New UnitService.getUnitRequestBody()
+            inValue.Body.unitId = unitId
+            Return CType(Me,UnitService.UnitServiceSoap).getUnitAsync(inValue)
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Function UnitService_UnitServiceSoap_getUnitByName(ByVal request As UnitService.getUnitByNameRequest) As UnitService.getUnitByNameResponse Implements UnitService.UnitServiceSoap.getUnitByName
             Return MyBase.Channel.getUnitByName(request)
         End Function
@@ -1457,6 +1571,14 @@ Namespace UnitService
         
         Public Function getTotalAmountByUnitIdAsync(ByVal unitId As Long) As System.Threading.Tasks.Task(Of Integer) Implements UnitService.UnitServiceSoap.getTotalAmountByUnitIdAsync
             Return MyBase.Channel.getTotalAmountByUnitIdAsync(unitId)
+        End Function
+        
+        Public Function getTotalAmount() As Integer Implements UnitService.UnitServiceSoap.getTotalAmount
+            Return MyBase.Channel.getTotalAmount
+        End Function
+        
+        Public Function getTotalAmountAsync() As System.Threading.Tasks.Task(Of Integer) Implements UnitService.UnitServiceSoap.getTotalAmountAsync
+            Return MyBase.Channel.getTotalAmountAsync
         End Function
     End Class
 End Namespace

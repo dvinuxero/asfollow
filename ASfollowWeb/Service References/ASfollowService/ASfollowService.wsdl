@@ -22,13 +22,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="shareInfo">
+      <s:element name="shareInfoMonthly">
         <s:complexType />
       </s:element>
-      <s:element name="shareInfoResponse">
+      <s:element name="shareInfoMonthlyResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="shareInfoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shareInfoMonthlyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="shareInfoUrgent">
+        <s:complexType />
+      </s:element>
+      <s:element name="shareInfoUrgentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shareInfoUrgentResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -46,11 +56,17 @@
   <wsdl:message name="aboutSoapOut">
     <wsdl:part name="parameters" element="tns:aboutResponse" />
   </wsdl:message>
-  <wsdl:message name="shareInfoSoapIn">
-    <wsdl:part name="parameters" element="tns:shareInfo" />
+  <wsdl:message name="shareInfoMonthlySoapIn">
+    <wsdl:part name="parameters" element="tns:shareInfoMonthly" />
   </wsdl:message>
-  <wsdl:message name="shareInfoSoapOut">
-    <wsdl:part name="parameters" element="tns:shareInfoResponse" />
+  <wsdl:message name="shareInfoMonthlySoapOut">
+    <wsdl:part name="parameters" element="tns:shareInfoMonthlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="shareInfoUrgentSoapIn">
+    <wsdl:part name="parameters" element="tns:shareInfoUrgent" />
+  </wsdl:message>
+  <wsdl:message name="shareInfoUrgentSoapOut">
+    <wsdl:part name="parameters" element="tns:shareInfoUrgentResponse" />
   </wsdl:message>
   <wsdl:portType name="ASfollowServiceSoap">
     <wsdl:operation name="ping">
@@ -61,9 +77,13 @@
       <wsdl:input message="tns:aboutSoapIn" />
       <wsdl:output message="tns:aboutSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="shareInfo">
-      <wsdl:input message="tns:shareInfoSoapIn" />
-      <wsdl:output message="tns:shareInfoSoapOut" />
+    <wsdl:operation name="shareInfoMonthly">
+      <wsdl:input message="tns:shareInfoMonthlySoapIn" />
+      <wsdl:output message="tns:shareInfoMonthlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="shareInfoUrgent">
+      <wsdl:input message="tns:shareInfoUrgentSoapIn" />
+      <wsdl:output message="tns:shareInfoUrgentSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ASfollowServiceSoap" type="tns:ASfollowServiceSoap">
@@ -86,8 +106,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="shareInfo">
-      <soap:operation soapAction="http://tempuri.org/shareInfo" style="document" />
+    <wsdl:operation name="shareInfoMonthly">
+      <soap:operation soapAction="http://tempuri.org/shareInfoMonthly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareInfoUrgent">
+      <soap:operation soapAction="http://tempuri.org/shareInfoUrgent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -116,8 +145,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="shareInfo">
-      <soap12:operation soapAction="http://tempuri.org/shareInfo" style="document" />
+    <wsdl:operation name="shareInfoMonthly">
+      <soap12:operation soapAction="http://tempuri.org/shareInfoMonthly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="shareInfoUrgent">
+      <soap12:operation soapAction="http://tempuri.org/shareInfoUrgent" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -23,8 +23,15 @@ Public Class ASfollowService
     End Function
 
     <WebMethod()> _
-    Public Function shareInfo() As String
-        EmailService.getInstance().shareInfo()
+    Public Function shareInfoMonthly() As String
+        EmailService.getInstance().shareInfoMonthly()
+
+        Return Now.ToString()
+    End Function
+
+    <WebMethod()> _
+    Public Function shareInfoUrgent() As String
+        EmailService.getInstance().shareInfoUrgent()
 
         Return Now.ToString()
     End Function

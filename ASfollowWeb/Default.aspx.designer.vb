@@ -23,6 +23,33 @@ Partial Public Class _Default
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
+    '''btnRefreshSteps control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnRefreshSteps As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnShareInfo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnShareInfo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnShareUrgentInfo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnShareUrgentInfo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''btnGoToActions control.
     '''</summary>
     '''<remarks>
@@ -39,13 +66,4 @@ Partial Public Class _Default
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents unitIdHidden As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''btnShareInfo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnShareInfo As Global.System.Web.UI.WebControls.Button
 End Class

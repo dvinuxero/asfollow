@@ -6,31 +6,7 @@ ASfollowWeb
 </name>
 </assembly>
 <members>
-<member name="F:ASfollowWeb.Actions.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ASfollowWeb.Actions.btnSetStepChecked">
-	<summary>
-btnSetStepChecked control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ASfollowWeb.Actions.stepIdHidden">
-	<summary>
-stepIdHidden control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="P:ASfollowWeb.My.MyWebExtension.Computer">
+<member name="P:ASfollowWeb.My.MyWebExtension.Computer">
 	<summary>
  Returns information about the host computer.
  </summary>
@@ -63,6 +39,30 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:ASfollowWeb._Default.btnRefreshSteps">
+	<summary>
+btnRefreshSteps control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb._Default.btnShareInfo">
+	<summary>
+btnShareInfo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb._Default.btnShareUrgentInfo">
+	<summary>
+btnShareUrgentInfo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:ASfollowWeb._Default.btnGoToActions">
 	<summary>
 btnGoToActions control.
@@ -79,9 +79,25 @@ unitIdHidden control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ASfollowWeb._Default.btnShareInfo">
+</member><member name="F:ASfollowWeb.Actions.form1">
 	<summary>
-btnShareInfo control.
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.btnSetStepChecked">
+	<summary>
+btnSetStepChecked control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.stepIdHidden">
+	<summary>
+stepIdHidden control.
 </summary>
 	<remarks>
 Auto-generated field.
