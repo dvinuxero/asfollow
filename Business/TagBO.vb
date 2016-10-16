@@ -32,4 +32,8 @@ Public Class TagBO
         Return TagDAO.getInstance().getTags()
     End Function
 
+    Public Function getTagById(tagId As Long) As tag
+        Return TagDAO.getInstance().getTagById(tagId)
+    End Function
+
 End Class

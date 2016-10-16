@@ -1,0 +1,111 @@
+﻿/*Principal styles*/
+
+body {
+}
+
+.centralContent {
+    margin: 0 auto;
+}
+
+
+
+
+
+/*Section Default*/
+
+.boxResume {
+    width : 200px;
+    height : 210px;
+    border:solid 1px black;
+    margin: 10px auto;
+    display: block;
+    text-align:center;
+    cursor: pointer;
+}
+
+.boxResume-picUrl {
+    margin: 0 auto;
+    display : inline-block;
+    width: 90%;
+    height : 100px;
+}
+
+.boxResume-rowInit {
+    margin: 0 auto;
+    width:200px;
+    height:50px;
+    text-align:center;
+}
+
+.boxResume-rowEnd {
+    margin: 0 auto;
+    width:200px;
+    height:50px;
+    text-align:center;
+}
+
+.shareInfo {
+    width : 70px;
+    height : 70px;
+    margin: auto;
+    display: block;
+    text-align:center;
+    cursor: pointer;
+
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/3/34/ISync_icon.png');
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+/*Section Actions/Steps*/
+.titleAction {
+    width: 80%;
+    margin: 10px auto;
+    text-align:left;
+    font-size: xx-large;
+}
+
+.boxStep {
+    width : 80%;
+    height : 110px;
+    border: solid 1px black;
+    margin: 10px auto;
+    display: block;
+    text-align:center;
+    cursor: pointer;
+}
+
+.stepChecked {
+    background-color: darkgray;
+}
+
+.stepNotChecked {
+    background-color: aliceblue;
+}
+
+.tagCol {
+    width : 20%;
+    margin:auto;
+    text-align :center;
+}
+
+.textCol {
+    width : 80%;
+    margin:auto;
+    text-align :left;
+}
+
+.checkedCol {
+    width : 20%;
+    margin:auto;
+    text-align :center;
+}
+
+.descriptionCol {
+    margin:auto;
+    text-align :left;
+    font-style:italic;
+}

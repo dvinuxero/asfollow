@@ -37,6 +37,20 @@ Public Class StepDAO
         End If
     End Sub
 
+    Public Sub setStepChecked(stepId As Long)
+        Dim oldStep As [step] = DataBase.getInstance().connectionDataModel.step.Find(stepId)
+
+        If (oldStep IsNot Nothing) Then
+            If (oldStep.checked = "Y") Then
+                oldStep.checked = "N"
+            Else
+                oldStep.checked = "Y"
+            End If
+
+            DataBase.getInstance().connectionDataModel.SaveChanges()
+        End If
+    End Sub
+
     Public Sub deleteStep(deletedStep As [step])
         Dim oldStep As [step] = DataBase.getInstance().connectionDataModel.step.Find(deletedStep.step_id)
 

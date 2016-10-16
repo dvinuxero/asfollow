@@ -94,6 +94,11 @@ Public Class UnitService
     End Function
 
     <WebMethod()> _
+    Public Overloads Function getUnitType(typeId As Long) As unit_type
+        Return UnitBO.getInstance().getUnitType(typeId)
+    End Function
+
+    <WebMethod()> _
     Public Overloads Function getUnitTypeByName(name As String) As unit_type
         Return UnitBO.getInstance().getUnitTypeByName(name)
     End Function
@@ -101,6 +106,11 @@ Public Class UnitService
     <WebMethod()> _
     Public Overloads Function getUnitTypes() As List(Of unit_type)
         Return UnitBO.getInstance().getUnitTypes()
+    End Function
+
+    <WebMethod()> _
+    Public Overloads Function getTotalAmountByUnitId(unitId As Long) As Integer
+        Return UnitBO.getInstance().getTotalAmountByUnitId(unitId)
     End Function
 
 End Class

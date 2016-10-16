@@ -63,6 +63,13 @@ Public Class StepService
     End Function
 
     <WebMethod()> _
+    Public Overloads Function setStepChecked(stepId As Long) As Boolean
+        StepBO.getInstance().setStepChecked(stepId)
+
+        Return True
+    End Function
+
+    <WebMethod()> _
     Public Overloads Function deleteStep(stepId As Long) As Boolean
         Dim deletedStep As [step] = New StepBuilder().createStep()
         deletedStep.step_id = stepId

@@ -60,4 +60,9 @@ Public Class TagService
         Return TagBO.getInstance().getTags()
     End Function
 
+    <WebMethod()> _
+    Public Overloads Function getTag(tagId As Long) As tag
+        Return TagBO.getInstance().getTagById(tagId)
+    End Function
+
 End Class

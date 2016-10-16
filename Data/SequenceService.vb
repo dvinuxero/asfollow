@@ -45,7 +45,7 @@ Public Class SequenceService
                     lastId = (From a In DataBase.getInstance().connectionDataModel.action.ToList() Select a.action_id).Max()
 
                 Case GetType([step])
-                    lastId = (From s In DataBase.getInstance().connectionDataModel.step.ToList() Select s.action_id).Max()
+                    lastId = (From s In DataBase.getInstance().connectionDataModel.step.ToList() Select s.step_id).Max()
 
                 Case GetType(tag)
                     lastId = (From t In DataBase.getInstance().connectionDataModel.tag.ToList() Select t.tag_id).Max()

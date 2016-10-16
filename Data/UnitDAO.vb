@@ -98,6 +98,19 @@ Public Class UnitDAO
         Return Nothing
     End Function
 
+    Public Function getUnitType(typeId As Long) As unit_type
+        Try
+            Dim resultUnitType = (From ut In DataBase.getInstance().connectionDataModel.unit_type Select ut.type_id, ut.name, ut.picture_url Where type_id = typeId).First()
+
+            If (resultUnitType IsNot Nothing) Then
+                Return New UnitTypeBuilder().createUnitType(resultUnitType.name, resultUnitType.picture_url, resultUnitType.type_id)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Return Nothing
+    End Function
+
     Public Function getUnitTypeByName(mName As String) As unit_type
         Try
             Dim resultUnitType = (From ut In DataBase.getInstance().connectionDataModel.unit_type Select ut.type_id, ut.name, ut.picture_url Where name = mName).First()
@@ -129,6 +142,15 @@ Public Class UnitDAO
         End Try
 
         Return Nothing
+    End Function
+
+    Public Function getTotalAmountByUnitId(unitId As Long) As Integer
+        Try
+            Return (From s In DataBase.getInstance().connectionDataModel.step Join a In DataBase.getInstance().connectionDataModel.action On s.action_id Equals a.action_id Where a.unit_id = unitId Select s.amount).Sum()
+        Catch ex As Exception
+        End Try
+
+        Return 0
     End Function
 
 End Class

@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="pingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUnitByNameAndTypeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUnitByNameAndTypeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addUnitByNameAndTypeIdResult" type="tns:unit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="unit">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="unit_id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="type_id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addUnitTypeByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUnitTypeByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addUnitTypeByNameResult" type="tns:unit_type" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="unit_type">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="type_id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="picture_url" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addUnitTypeByNameAndPictureUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pictureUrl" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addUnitTypeByNameAndPictureUrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addUnitTypeByNameAndPictureUrlResult" type="tns:unit_type" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateUnitResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateUnitType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pictureUrl" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateUnitTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateUnitTypeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUnit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteUnitResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUnitType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteUnitTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteUnitTypeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnitByNameResult" type="tns:unit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnits">
+        <s:complexType />
+      </s:element>
+      <s:element name="getUnitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnitsResult" type="tns:ArrayOfUnit" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUnit">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="unit" nillable="true" type="tns:unit" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUnitType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="typeId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnitTypeResult" type="tns:unit_type" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitTypeByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitTypeByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnitTypeByNameResult" type="tns:unit_type" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUnitTypes">
+        <s:complexType />
+      </s:element>
+      <s:element name="getUnitTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUnitTypesResult" type="tns:ArrayOfUnit_type" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUnit_type">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="unit_type" nillable="true" type="tns:unit_type" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTotalAmountByUnitId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTotalAmountByUnitIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getTotalAmountByUnitIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="pingSoapIn">
+    <wsdl:part name="parameters" element="tns:ping" />
+  </wsdl:message>
+  <wsdl:message name="pingSoapOut">
+    <wsdl:part name="parameters" element="tns:pingResponse" />
+  </wsdl:message>
+  <wsdl:message name="addUnitByNameAndTypeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:addUnitByNameAndTypeId" />
+  </wsdl:message>
+  <wsdl:message name="addUnitByNameAndTypeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:addUnitByNameAndTypeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="addUnitTypeByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:addUnitTypeByName" />
+  </wsdl:message>
+  <wsdl:message name="addUnitTypeByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:addUnitTypeByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="addUnitTypeByNameAndPictureUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:addUnitTypeByNameAndPictureUrl" />
+  </wsdl:message>
+  <wsdl:message name="addUnitTypeByNameAndPictureUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:addUnitTypeByNameAndPictureUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:updateUnit" />
+  </wsdl:message>
+  <wsdl:message name="updateUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:updateUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateUnitTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:updateUnitType" />
+  </wsdl:message>
+  <wsdl:message name="updateUnitTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:updateUnitTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteUnit" />
+  </wsdl:message>
+  <wsdl:message name="deleteUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteUnitTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteUnitType" />
+  </wsdl:message>
+  <wsdl:message name="deleteUnitTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteUnitTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnitByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnitByName" />
+  </wsdl:message>
+  <wsdl:message name="getUnitByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnitByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnitsSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnits" />
+  </wsdl:message>
+  <wsdl:message name="getUnitsSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnitType" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnitTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTypeByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnitTypeByName" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTypeByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnitTypeByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:getUnitTypes" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:getUnitTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTotalAmountByUnitIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getTotalAmountByUnitId" />
+  </wsdl:message>
+  <wsdl:message name="getTotalAmountByUnitIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getTotalAmountByUnitIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UnitServiceSoap">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingSoapIn" />
+      <wsdl:output message="tns:pingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addUnitByNameAndTypeId">
+      <wsdl:input message="tns:addUnitByNameAndTypeIdSoapIn" />
+      <wsdl:output message="tns:addUnitByNameAndTypeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addUnitTypeByName">
+      <wsdl:input message="tns:addUnitTypeByNameSoapIn" />
+      <wsdl:output message="tns:addUnitTypeByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addUnitTypeByNameAndPictureUrl">
+      <wsdl:input message="tns:addUnitTypeByNameAndPictureUrlSoapIn" />
+      <wsdl:output message="tns:addUnitTypeByNameAndPictureUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUnit">
+      <wsdl:input message="tns:updateUnitSoapIn" />
+      <wsdl:output message="tns:updateUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUnitType">
+      <wsdl:input message="tns:updateUnitTypeSoapIn" />
+      <wsdl:output message="tns:updateUnitTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUnit">
+      <wsdl:input message="tns:deleteUnitSoapIn" />
+      <wsdl:output message="tns:deleteUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteUnitType">
+      <wsdl:input message="tns:deleteUnitTypeSoapIn" />
+      <wsdl:output message="tns:deleteUnitTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitByName">
+      <wsdl:input message="tns:getUnitByNameSoapIn" />
+      <wsdl:output message="tns:getUnitByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnits">
+      <wsdl:input message="tns:getUnitsSoapIn" />
+      <wsdl:output message="tns:getUnitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitType">
+      <wsdl:input message="tns:getUnitTypeSoapIn" />
+      <wsdl:output message="tns:getUnitTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTypeByName">
+      <wsdl:input message="tns:getUnitTypeByNameSoapIn" />
+      <wsdl:output message="tns:getUnitTypeByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTypes">
+      <wsdl:input message="tns:getUnitTypesSoapIn" />
+      <wsdl:output message="tns:getUnitTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTotalAmountByUnitId">
+      <wsdl:input message="tns:getTotalAmountByUnitIdSoapIn" />
+      <wsdl:output message="tns:getTotalAmountByUnitIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UnitServiceSoap" type="tns:UnitServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://tempuri.org/ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUnitByNameAndTypeId">
+      <soap:operation soapAction="http://tempuri.org/addUnitByNameAndTypeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUnitTypeByName">
+      <soap:operation soapAction="http://tempuri.org/addUnitTypeByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUnitTypeByNameAndPictureUrl">
+      <soap:operation soapAction="http://tempuri.org/addUnitTypeByNameAndPictureUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUnit">
+      <soap:operation soapAction="http://tempuri.org/updateUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUnitType">
+      <soap:operation soapAction="http://tempuri.org/updateUnitType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUnit">
+      <soap:operation soapAction="http://tempuri.org/deleteUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUnitType">
+      <soap:operation soapAction="http://tempuri.org/deleteUnitType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitByName">
+      <soap:operation soapAction="http://tempuri.org/getUnitByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnits">
+      <soap:operation soapAction="http://tempuri.org/getUnits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitType">
+      <soap:operation soapAction="http://tempuri.org/getUnitType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTypeByName">
+      <soap:operation soapAction="http://tempuri.org/getUnitTypeByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTypes">
+      <soap:operation soapAction="http://tempuri.org/getUnitTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalAmountByUnitId">
+      <soap:operation soapAction="http://tempuri.org/getTotalAmountByUnitId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UnitServiceSoap12" type="tns:UnitServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ping">
+      <soap12:operation soapAction="http://tempuri.org/ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUnitByNameAndTypeId">
+      <soap12:operation soapAction="http://tempuri.org/addUnitByNameAndTypeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUnitTypeByName">
+      <soap12:operation soapAction="http://tempuri.org/addUnitTypeByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUnitTypeByNameAndPictureUrl">
+      <soap12:operation soapAction="http://tempuri.org/addUnitTypeByNameAndPictureUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUnit">
+      <soap12:operation soapAction="http://tempuri.org/updateUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUnitType">
+      <soap12:operation soapAction="http://tempuri.org/updateUnitType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUnit">
+      <soap12:operation soapAction="http://tempuri.org/deleteUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUnitType">
+      <soap12:operation soapAction="http://tempuri.org/deleteUnitType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitByName">
+      <soap12:operation soapAction="http://tempuri.org/getUnitByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnits">
+      <soap12:operation soapAction="http://tempuri.org/getUnits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitType">
+      <soap12:operation soapAction="http://tempuri.org/getUnitType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTypeByName">
+      <soap12:operation soapAction="http://tempuri.org/getUnitTypeByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTypes">
+      <soap12:operation soapAction="http://tempuri.org/getUnitTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTotalAmountByUnitId">
+      <soap12:operation soapAction="http://tempuri.org/getTotalAmountByUnitId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UnitService">
+    <wsdl:port name="UnitServiceSoap" binding="tns:UnitServiceSoap">
+      <soap:address location="http://localhost:2415/services/core/UnitService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UnitServiceSoap12" binding="tns:UnitServiceSoap12">
+      <soap12:address location="http://localhost:2415/services/core/UnitService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

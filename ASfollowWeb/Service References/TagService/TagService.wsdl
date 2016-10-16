@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="pingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTagByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTagByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addTagByNameResult" type="tns:tag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="tag">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="tag_id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="addTagByNameAndColor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addTagByNameAndColorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addTagByNameAndColorResult" type="tns:tag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="color" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateTagResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteTagResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTags">
+        <s:complexType />
+      </s:element>
+      <s:element name="getTagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTagsResult" type="tns:ArrayOfTag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTag">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="tag" nillable="true" type="tns:tag" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getTag">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="tagId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getTagResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getTagResult" type="tns:tag" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="pingSoapIn">
+    <wsdl:part name="parameters" element="tns:ping" />
+  </wsdl:message>
+  <wsdl:message name="pingSoapOut">
+    <wsdl:part name="parameters" element="tns:pingResponse" />
+  </wsdl:message>
+  <wsdl:message name="addTagByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:addTagByName" />
+  </wsdl:message>
+  <wsdl:message name="addTagByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:addTagByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="addTagByNameAndColorSoapIn">
+    <wsdl:part name="parameters" element="tns:addTagByNameAndColor" />
+  </wsdl:message>
+  <wsdl:message name="addTagByNameAndColorSoapOut">
+    <wsdl:part name="parameters" element="tns:addTagByNameAndColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateTagSoapIn">
+    <wsdl:part name="parameters" element="tns:updateTag" />
+  </wsdl:message>
+  <wsdl:message name="updateTagSoapOut">
+    <wsdl:part name="parameters" element="tns:updateTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteTagSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteTag" />
+  </wsdl:message>
+  <wsdl:message name="deleteTagSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTagsSoapIn">
+    <wsdl:part name="parameters" element="tns:getTags" />
+  </wsdl:message>
+  <wsdl:message name="getTagsSoapOut">
+    <wsdl:part name="parameters" element="tns:getTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTagSoapIn">
+    <wsdl:part name="parameters" element="tns:getTag" />
+  </wsdl:message>
+  <wsdl:message name="getTagSoapOut">
+    <wsdl:part name="parameters" element="tns:getTagResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TagServiceSoap">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingSoapIn" />
+      <wsdl:output message="tns:pingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addTagByName">
+      <wsdl:input message="tns:addTagByNameSoapIn" />
+      <wsdl:output message="tns:addTagByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addTagByNameAndColor">
+      <wsdl:input message="tns:addTagByNameAndColorSoapIn" />
+      <wsdl:output message="tns:addTagByNameAndColorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTag">
+      <wsdl:input message="tns:updateTagSoapIn" />
+      <wsdl:output message="tns:updateTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteTag">
+      <wsdl:input message="tns:deleteTagSoapIn" />
+      <wsdl:output message="tns:deleteTagSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTags">
+      <wsdl:input message="tns:getTagsSoapIn" />
+      <wsdl:output message="tns:getTagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getTag">
+      <wsdl:input message="tns:getTagSoapIn" />
+      <wsdl:output message="tns:getTagSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TagServiceSoap" type="tns:TagServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://tempuri.org/ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTagByName">
+      <soap:operation soapAction="http://tempuri.org/addTagByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTagByNameAndColor">
+      <soap:operation soapAction="http://tempuri.org/addTagByNameAndColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTag">
+      <soap:operation soapAction="http://tempuri.org/updateTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTag">
+      <soap:operation soapAction="http://tempuri.org/deleteTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTags">
+      <soap:operation soapAction="http://tempuri.org/getTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTag">
+      <soap:operation soapAction="http://tempuri.org/getTag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TagServiceSoap12" type="tns:TagServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ping">
+      <soap12:operation soapAction="http://tempuri.org/ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTagByName">
+      <soap12:operation soapAction="http://tempuri.org/addTagByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addTagByNameAndColor">
+      <soap12:operation soapAction="http://tempuri.org/addTagByNameAndColor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTag">
+      <soap12:operation soapAction="http://tempuri.org/updateTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteTag">
+      <soap12:operation soapAction="http://tempuri.org/deleteTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTags">
+      <soap12:operation soapAction="http://tempuri.org/getTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTag">
+      <soap12:operation soapAction="http://tempuri.org/getTag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TagService">
+    <wsdl:port name="TagServiceSoap" binding="tns:TagServiceSoap">
+      <soap:address location="http://localhost:2415/services/core/TagService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TagServiceSoap12" binding="tns:TagServiceSoap12">
+      <soap12:address location="http://localhost:2415/services/core/TagService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

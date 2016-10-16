@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="pingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addActionByNameAndUnitId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addActionByNameAndUnitIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addActionByNameAndUnitIdResult" type="tns:action" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="action">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="action_id" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="unit_id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="updateAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="actionId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateActionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="actionId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteActionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActionByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActionByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActionByNameResult" type="tns:action" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActionsByUnitId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="unitId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActionsByUnitIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActionsByUnitIdResult" type="tns:ArrayOfAction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="action" nillable="true" type="tns:action" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="pingSoapIn">
+    <wsdl:part name="parameters" element="tns:ping" />
+  </wsdl:message>
+  <wsdl:message name="pingSoapOut">
+    <wsdl:part name="parameters" element="tns:pingResponse" />
+  </wsdl:message>
+  <wsdl:message name="addActionByNameAndUnitIdSoapIn">
+    <wsdl:part name="parameters" element="tns:addActionByNameAndUnitId" />
+  </wsdl:message>
+  <wsdl:message name="addActionByNameAndUnitIdSoapOut">
+    <wsdl:part name="parameters" element="tns:addActionByNameAndUnitIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateActionSoapIn">
+    <wsdl:part name="parameters" element="tns:updateAction" />
+  </wsdl:message>
+  <wsdl:message name="updateActionSoapOut">
+    <wsdl:part name="parameters" element="tns:updateActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteActionSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAction" />
+  </wsdl:message>
+  <wsdl:message name="deleteActionSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActionByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:getActionByName" />
+  </wsdl:message>
+  <wsdl:message name="getActionByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:getActionByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActionsByUnitIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getActionsByUnitId" />
+  </wsdl:message>
+  <wsdl:message name="getActionsByUnitIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getActionsByUnitIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ActionServiceSoap">
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingSoapIn" />
+      <wsdl:output message="tns:pingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addActionByNameAndUnitId">
+      <wsdl:input message="tns:addActionByNameAndUnitIdSoapIn" />
+      <wsdl:output message="tns:addActionByNameAndUnitIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAction">
+      <wsdl:input message="tns:updateActionSoapIn" />
+      <wsdl:output message="tns:updateActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAction">
+      <wsdl:input message="tns:deleteActionSoapIn" />
+      <wsdl:output message="tns:deleteActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActionByName">
+      <wsdl:input message="tns:getActionByNameSoapIn" />
+      <wsdl:output message="tns:getActionByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActionsByUnitId">
+      <wsdl:input message="tns:getActionsByUnitIdSoapIn" />
+      <wsdl:output message="tns:getActionsByUnitIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ActionServiceSoap" type="tns:ActionServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="http://tempuri.org/ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addActionByNameAndUnitId">
+      <soap:operation soapAction="http://tempuri.org/addActionByNameAndUnitId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAction">
+      <soap:operation soapAction="http://tempuri.org/updateAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAction">
+      <soap:operation soapAction="http://tempuri.org/deleteAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionByName">
+      <soap:operation soapAction="http://tempuri.org/getActionByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionsByUnitId">
+      <soap:operation soapAction="http://tempuri.org/getActionsByUnitId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ActionServiceSoap12" type="tns:ActionServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ping">
+      <soap12:operation soapAction="http://tempuri.org/ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addActionByNameAndUnitId">
+      <soap12:operation soapAction="http://tempuri.org/addActionByNameAndUnitId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAction">
+      <soap12:operation soapAction="http://tempuri.org/updateAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAction">
+      <soap12:operation soapAction="http://tempuri.org/deleteAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionByName">
+      <soap12:operation soapAction="http://tempuri.org/getActionByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActionsByUnitId">
+      <soap12:operation soapAction="http://tempuri.org/getActionsByUnitId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActionService">
+    <wsdl:port name="ActionServiceSoap" binding="tns:ActionServiceSoap">
+      <soap:address location="http://localhost:2415/services/core/ActionService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ActionServiceSoap12" binding="tns:ActionServiceSoap12">
+      <soap12:address location="http://localhost:2415/services/core/ActionService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

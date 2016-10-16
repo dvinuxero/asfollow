@@ -48,12 +48,20 @@ Public Class UnitBO
         Return UnitDAO.getInstance().getUnits()
     End Function
 
+    Public Function getUnitType(typeId As Long) As unit_type
+        Return UnitDAO.getInstance().getUnitType(typeId)
+    End Function
+
     Public Function getUnitTypeByName(name As String) As unit_type
         Return UnitDAO.getInstance().getUnitTypeByName(name)
     End Function
 
     Public Function getUnitTypes() As List(Of unit_type)
         Return UnitDAO.getInstance().getUnitTypes()
+    End Function
+
+    Public Function getTotalAmountByUnitId(unitId As Long) As Integer
+        Return UnitDAO.getInstance().getTotalAmountByUnitId(unitId)
     End Function
 
 End Class

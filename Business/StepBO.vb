@@ -24,6 +24,10 @@ Public Class StepBO
         StepDAO.getInstance().updateStep(updatedStep)
     End Sub
 
+    Public Sub setStepChecked(stepId As Long)
+        StepDAO.getInstance().setStepChecked(stepId)
+    End Sub
+
     Public Sub deleteStep(deletedStep As [step])
         StepDAO.getInstance().deleteStep(deletedStep)
     End Sub
