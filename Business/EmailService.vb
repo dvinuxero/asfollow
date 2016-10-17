@@ -31,12 +31,14 @@ Public Class EmailService
 
     Public Sub shareInfoMonthly()
         prepareInfo()
+        Me.mail.Subject = "ASfollow - Info monthly"
         Me.mail.Body = Me.getBody(0)
         Me.smtpServer.Send(Me.mail)
     End Sub
 
     Public Sub shareInfoUrgent()
         prepareInfo()
+        Me.mail.Subject = "ASfollow - Info urgents"
         Me.mail.Body = Me.getBody(1)
         Me.smtpServer.Send(Me.mail)
     End Sub
@@ -44,7 +46,6 @@ Public Class EmailService
     Private Sub prepareInfo()
         Me.mail.From = New MailAddress("asfollow.info@gmail.com")
         Me.mail.To.Add("villanustre@gmail.com")
-        Me.mail.Subject = "Share info ASfollow"
         Me.mail.IsBodyHtml = True
     End Sub
 

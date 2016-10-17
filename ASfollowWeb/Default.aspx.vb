@@ -14,11 +14,11 @@ Public Class _Default
         AllServices.getInstance().shareInfo(0)
     End Sub
 
-    Protected Sub shareUrgentInfo_Click(sender As Object, e As EventArgs) Handles btnShareInfo.Click
+    Protected Sub shareUrgentInfo_Click(sender As Object, e As EventArgs) Handles btnShareUrgentInfo.Click
         AllServices.getInstance().shareInfo(1)
     End Sub
 
-    Protected Sub refreshSteps_Click(sender As Object, e As EventArgs) Handles btnShareInfo.Click
+    Protected Sub refreshSteps_Click(sender As Object, e As EventArgs) Handles btnRefreshSteps.Click
         AllServices.getInstance().refreshSteps()
     End Sub
 
