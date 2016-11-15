@@ -85,6 +85,7 @@
   <ItemGroup>
     <Content Include="Actions.aspx" />
     <Content Include="data\css\ASfollowWeb.css" />
+    <Content Include="data\css\General.css" />
     <Content Include="Default.aspx" />
     <Content Include="Service References\ActionService\ActionService.disco" />
     <Content Include="Service References\ActionService\ASfollowWeb.ActionService.action.datasource">
@@ -226,6 +227,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+    <Content Include="Units.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -290,6 +292,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="services\AllServices.vb" />
+    <Compile Include="Units.aspx.designer.vb">
+      <DependentUpon>Units.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Units.aspx.vb">
+      <DependentUpon>Units.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

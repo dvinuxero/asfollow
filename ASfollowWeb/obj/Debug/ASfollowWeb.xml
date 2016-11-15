@@ -6,7 +6,23 @@ ASfollowWeb
 </name>
 </assembly>
 <members>
-<member name="P:ASfollowWeb.My.MyWebExtension.Computer">
+<member name="F:ASfollowWeb.Units.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Units.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:ASfollowWeb.My.MyWebExtension.Computer">
 	<summary>
  Returns information about the host computer.
  </summary>
@@ -58,6 +74,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:ASfollowWeb._Default.btnShareUrgentInfo">
 	<summary>
 btnShareUrgentInfo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb._Default.addNewUnit">
+	<summary>
+addNewUnit control.
 </summary>
 	<remarks>
 Auto-generated field.

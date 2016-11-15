@@ -50,6 +50,15 @@ Partial Public Class _Default
     Protected WithEvents btnShareUrgentInfo As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''addNewUnit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents addNewUnit As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''btnGoToActions control.
     '''</summary>
     '''<remarks>

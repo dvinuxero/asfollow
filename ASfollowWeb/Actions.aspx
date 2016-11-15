@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Actions - <%=AllServices.getInstance().getUnitName(Long.Parse(Request.QueryString.Get("unit_id"))) %></title>
+    <!--<link rel="stylesheet" type="text/css" href="/data/css/General.css" />-->
     <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
 
     <script type="text/ecmascript">

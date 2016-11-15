@@ -22,4 +22,7 @@ Public Class _Default
         AllServices.getInstance().refreshSteps()
     End Sub
 
+    Protected Sub addNewUnit_Click(sender As Object, e As EventArgs) Handles addNewUnit.Click
+        Response.Redirect("Units.aspx")
+    End Sub
 End Class

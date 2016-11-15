@@ -149,4 +149,21 @@ Public Class AllServices
         Return unit.name.ToUpper()
     End Function
 
+    Public Function getUnitTypes() As List(Of unit_type)
+        Dim listUnitTypes As New List(Of unit_type)
+        Dim arrUnitTypes As ASfollowWeb.UnitService.ArrayOfUnit_type = unitService.getUnitTypes()
+
+        If (arrUnitTypes IsNot Nothing) Then
+            For Each unitType As ASfollowWeb.UnitService.unit_type In arrUnitTypes
+                listUnitTypes.Add(New UnitTypeBuilder().createUnitType(unitType.name, unitType.picture_url, unitType.type_id))
+            Next
+        End If
+
+        Return listUnitTypes
+    End Function
+
+    Public Sub addUnit(unitName As String, unitType As Long)
+        unitService.addUnitByNameAndTypeId(unitName, unitType)
+    End Sub
+
 End Class
