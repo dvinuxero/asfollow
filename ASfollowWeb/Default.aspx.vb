@@ -23,6 +23,6 @@ Public Class _Default
     End Sub
 
     Protected Sub addNewUnit_Click(sender As Object, e As EventArgs) Handles addNewUnit.Click
-        Response.Redirect("Units.aspx")
+        Response.Redirect("/admin/ABMUnits.aspx")
     End Sub
 End Class

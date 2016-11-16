@@ -71,6 +71,18 @@ body {
     background-color: white;
 }
 
+.addUnitPic {
+    background-image: url('https://cdn2.iconfinder.com/data/icons/iconika-productivity-solid-vol-1-1/512/Add_item_positive-128.png');
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+.AddActiontPic {
+    background-image: url('https://cdn2.iconfinder.com/data/icons/iconika-productivity-solid-vol-1-1/512/Add_item_positive-128.png');
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
 .boxResumeAmount {
     text-align:left;
 }

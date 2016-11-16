@@ -1,4 +1,4 @@
-﻿Public Class Units
+﻿Public Class ABMUnits
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -17,7 +17,7 @@
         Catch ex As FormatException
         End Try
 
-        Response.Redirect("Default.aspx")
+        Response.Redirect("/Default.aspx")
     End Sub
 
 End Class

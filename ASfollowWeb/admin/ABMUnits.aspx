@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Units.aspx.vb" Inherits="ASfollowWeb.Units" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMUnits.aspx.vb" Inherits="ASfollowWeb.ABMUnits" %>
 <%@ Import Namespace="ASfollowWeb" %>
 
 <!DOCTYPE html>
@@ -9,13 +9,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
     <title>ASfollow - De la siguiente manera - Agregar unidad</title>
-    <!--<link rel="stylesheet" type="text/css" href="/data/css/General.css" />-->
-    <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
+    <link rel="stylesheet" type="text/css" href="/data/css/General.css" />
 </head>
 <body>
+    <a href="/Default.aspx">Volver</a>
+
     <form id="form1" runat="server">
         <input type="hidden" name="action" value="postUnit" />
-        <div class="addUnit">Agregar una nueva unidad</div>
+        <div class="addUnit"><b>Agregar una nueva unidad</b></div>
 
         <div class="centralContent">
             <table>
@@ -34,6 +35,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td><input name="addUnit" type="submit" value="Agregar unidad" /></td>
                 </tr>
             </table>

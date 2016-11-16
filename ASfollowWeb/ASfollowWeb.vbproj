@@ -84,6 +84,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Actions.aspx" />
+    <Content Include="admin\ABMActions.aspx" />
+    <Content Include="admin\ABMSteps.aspx" />
     <Content Include="data\css\ASfollowWeb.css" />
     <Content Include="data\css\General.css" />
     <Content Include="Default.aspx" />
@@ -227,7 +229,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
-    <Content Include="Units.aspx" />
+    <Content Include="admin\ABMUnits.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -238,6 +240,20 @@
     </Compile>
     <Compile Include="Actions.aspx.vb">
       <DependentUpon>Actions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\ABMActions.aspx.designer.vb">
+      <DependentUpon>ABMActions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ABMActions.aspx.vb">
+      <DependentUpon>ABMActions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="admin\ABMSteps.aspx.designer.vb">
+      <DependentUpon>ABMSteps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\ABMSteps.aspx.vb">
+      <DependentUpon>ABMSteps.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
@@ -292,11 +308,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="services\AllServices.vb" />
-    <Compile Include="Units.aspx.designer.vb">
-      <DependentUpon>Units.aspx</DependentUpon>
+    <Compile Include="admin\ABMUnits.aspx.designer.vb">
+      <DependentUpon>ABMUnits.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Units.aspx.vb">
-      <DependentUpon>Units.aspx</DependentUpon>
+    <Compile Include="admin\ABMUnits.aspx.vb">
+      <DependentUpon>ABMUnits.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>

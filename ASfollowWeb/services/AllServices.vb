@@ -122,6 +122,10 @@ Public Class AllServices
         stepService.setStepChecked(stepId)
     End Sub
 
+    Public Sub deleteStep(stepId As Long)
+        stepService.deleteStep(stepId)
+    End Sub
+
     Public Function getTotalAmountByUnitId(unitId As Long) As Integer
         Return unitService.getTotalAmountByUnitId(unitId)
     End Function
@@ -164,6 +168,27 @@ Public Class AllServices
 
     Public Sub addUnit(unitName As String, unitType As Long)
         unitService.addUnitByNameAndTypeId(unitName, unitType)
+    End Sub
+
+    Public Sub addAction(actionName As String, unitId As Long)
+        actionService.addActionByNameAndUnitId(actionName, unitId)
+    End Sub
+
+    Public Function getTags() As List(Of tag)
+        Dim listTags As New List(Of tag)
+        Dim arrTags As ASfollowWeb.TagService.ArrayOfTag = tagService.getTags()
+
+        If (arrTags IsNot Nothing) Then
+            For Each mTag As ASfollowWeb.TagService.tag In arrTags
+                listTags.Add(New TagBuilder().createTag(mTag.name, mTag.color, mTag.tag_id))
+            Next
+        End If
+
+        Return listTags
+    End Function
+
+    Public Sub addStep(actionId As Integer, text As String, tagId As Integer, priority As Integer, amount As Integer, checked As String, cron As String, description As String)
+        stepService.addStep(actionId, text, tagId, priority, cron, amount, checked, description)
     End Sub
 
 End Class

@@ -9,7 +9,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>ASfollow - De la siguiente manera</title>
-    <!--<link rel="stylesheet" type="text/css" href="/data/css/General.css" />-->
     <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
 </head>
 <body>
@@ -18,7 +17,7 @@
     <asp:Button runat="server" ID="btnRefreshSteps" CssClass="generalAction refreshPic" OnClick="refreshSteps_Click" Text="" ToolTip="Reset tareas realizadas"/>
     <asp:Button runat="server" ID="btnShareInfo" CssClass="generalAction sharePic" OnClick="shareInfo_Click" Text="" ToolTip="Enviar acciones repetitivas"/>
     <asp:Button runat="server" ID="btnShareUrgentInfo" CssClass="generalAction shareUrgentPic" OnClick="shareUrgentInfo_Click" Text="" ToolTip="Enviar acciones urgentes"/>
-    <asp:Button runat="server" ID="addNewUnit" CssClass="generalAction shareUrgentPic" OnClick="addNewUnit_Click" Text="" ToolTip="Agregar Unidad"/>
+    <asp:Button runat="server" ID="addNewUnit" CssClass="generalAction addUnitPic" OnClick="addNewUnit_Click" Text="" ToolTip="Agregar Unidad"/>
 
     <div class="centralContent">
         

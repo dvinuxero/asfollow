@@ -10,3 +10,10 @@
 M D H m s
 * * * * *
 * 1 10 23 00 -> 1ero de cada mes a las 10:23:00hs
+
+
+-----Para la entrega-----
+
+-delete unit
+-delete action
+OK-delete step

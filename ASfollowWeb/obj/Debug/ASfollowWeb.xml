@@ -6,7 +6,7 @@ ASfollowWeb
 </name>
 </assembly>
 <members>
-<member name="F:ASfollowWeb.Units.Head1">
+<member name="F:ASfollowWeb.ABMSteps.Head1">
 	<summary>
 Head1 control.
 </summary>
@@ -14,7 +14,39 @@ Head1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ASfollowWeb.Units.form1">
+</member><member name="F:ASfollowWeb.ABMSteps.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMActions.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMActions.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMUnits.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMUnits.form1">
 	<summary>
 form1 control.
 </summary>
@@ -119,9 +151,57 @@ btnSetStepChecked control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:ASfollowWeb.Actions.btnAddAction">
+	<summary>
+btnAddAction control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.btnAddStepFromData">
+	<summary>
+btnAddStepFromData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.btnDeleteStep">
+	<summary>
+btnDeleteStep control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:ASfollowWeb.Actions.stepIdHidden">
 	<summary>
 stepIdHidden control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.unitIdHidden">
+	<summary>
+unitIdHidden control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.actionIdHidden">
+	<summary>
+actionIdHidden control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.Actions.actionNameHidden">
+	<summary>
+actionNameHidden control.
 </summary>
 	<remarks>
 Auto-generated field.

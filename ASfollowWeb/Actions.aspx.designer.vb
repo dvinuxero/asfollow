@@ -32,6 +32,33 @@ Partial Public Class Actions
     Protected WithEvents btnSetStepChecked As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btnAddAction control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddAction As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnAddStepFromData control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnAddStepFromData As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnDeleteStep control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnDeleteStep As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''stepIdHidden control.
     '''</summary>
     '''<remarks>
@@ -39,4 +66,31 @@ Partial Public Class Actions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents stepIdHidden As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''unitIdHidden control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents unitIdHidden As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''actionIdHidden control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents actionIdHidden As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
+    '''actionNameHidden control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents actionNameHidden As Global.System.Web.UI.WebControls.HiddenField
 End Class
