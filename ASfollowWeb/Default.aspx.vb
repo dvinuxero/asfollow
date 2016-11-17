@@ -22,6 +22,10 @@ Public Class _Default
         AllServices.getInstance().refreshSteps()
     End Sub
 
+    Protected Sub deleteUnit_Click(sender As Object, e As EventArgs) Handles deleteUnit.Click
+        AllServices.getInstance().deleteUnit(Long.Parse(unitIdHidden.Value))
+    End Sub
+
     Protected Sub addNewUnit_Click(sender As Object, e As EventArgs) Handles addNewUnit.Click
         Response.Redirect("/admin/ABMUnits.aspx")
     End Sub

@@ -40,6 +40,10 @@ Public Class AllServices
         Return listOfUnits
     End Function
 
+    Public Sub deleteUnit(unitId As Long)
+        unitService.deleteUnit(unitId)
+    End Sub
+
     Public Function getPicUrlByUnitType(typeId As Long) As String
         Dim unitType As UnitService.unit_type = unitService.getUnitType(typeId)
 
@@ -172,6 +176,10 @@ Public Class AllServices
 
     Public Sub addAction(actionName As String, unitId As Long)
         actionService.addActionByNameAndUnitId(actionName, unitId)
+    End Sub
+
+    Public Sub deleteAction(actionId As Long)
+        actionService.deleteAction(actionId)
     End Sub
 
     Public Function getTags() As List(Of tag)

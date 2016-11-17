@@ -19,6 +19,10 @@ Public Class Actions
         Response.Redirect("/admin/ABMActions.aspx?unit_id=" & unitIdHidden.Value)
     End Sub
 
+    Protected Sub btnDeleteAction_Click(sender As Object, e As EventArgs)
+        AllServices.getInstance().deleteAction(Long.Parse(actionIdHidden.Value))
+    End Sub
+
     Protected Sub btnAddStepFromData_Click(sender As Object, e As EventArgs)
         Response.Redirect("/admin/ABMSteps.aspx?unit_id=" & unitIdHidden.Value & "&action_id=" & actionIdHidden.Value & "&action_name=" & actionNameHidden.Value)
     End Sub

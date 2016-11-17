@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Actions - <%=AllServices.getInstance().getUnitName(Long.Parse(Request.QueryString.Get("unit_id"))) %></title>
     <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
+    <link rel="stylesheet" type="text/css" href="/data/css/General.css" />
 
     <script type="text/ecmascript">
         function setStepChecked(divStepId) {
@@ -32,13 +33,14 @@
         <asp:Button runat="server" ID="btnAddAction" OnClick="btnAddAction_Click" CommandArgument="" CssClass="generalAction AddActiontPic" ToolTip="Agregar accion" />
         <asp:Button runat="server" ID="btnAddStepFromData" style="display:none;" OnClick="btnAddStepFromData_Click" CommandArgument="" />
         <asp:Button runat="server" ID="btnDeleteStep" style="display:none;" OnClick="btnDeleteStep_Click" CommandArgument="" />
+        <asp:Button runat="server" ID="btnDeleteAction" style="display:none;" OnClick="btnDeleteAction_Click" CommandArgument="" />
         <asp:HiddenField runat="server" ID="stepIdHidden" value="" />
         <asp:HiddenField runat="server" ID="unitIdHidden" value=""/>
         <asp:HiddenField runat="server" ID="actionIdHidden" value=""/>
         <asp:HiddenField runat="server" ID="actionNameHidden" value=""/>
 
         <%For Each action As Entity.action In AllServices.getInstance().getActions(Long.Parse(Request.QueryString.Get("unit_id")))%>
-            <div class="titleAction"><%= action.name.ToUpper()%>&nbsp;<a href="#" onclick="document.getElementById('unitIdHidden').value='<%=action.unit_id%>';document.getElementById('actionIdHidden').value='<%=action.action_id%>';document.getElementById('actionNameHidden').value='<%=action.name.ToUpper()%>';document.getElementById('<%= btnAddStepFromData.ClientID%>').click();" title="Agregar paso">(+)</a></div>
+            <div class="titleAction"><%= action.name.ToUpper()%>&nbsp;<a href="#" onclick="document.getElementById('unitIdHidden').value='<%=action.unit_id%>';document.getElementById('actionIdHidden').value='<%=action.action_id%>';document.getElementById('actionNameHidden').value='<%=action.name.ToUpper()%>';document.getElementById('<%= btnAddStepFromData.ClientID%>').click();" title="Agregar paso">(+)</a>&nbsp;<a href="#" onclick="document.getElementById('actionIdHidden').value='<%=action.action_id%>';document.getElementById('<%= btnDeleteAction.ClientID%>').click();" title="Borrar Accion">(-)</a></div>
             <%For Each [step] As Entity.step In AllServices.getInstance().getSteps(action.action_id)%>
                 <%If([step].checked is Nothing) %>
                 <div id="step_<%=[step].step_id.ToString()%>" class="boxStep stepNotChecked">

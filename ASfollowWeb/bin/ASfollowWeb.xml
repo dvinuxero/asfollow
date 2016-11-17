@@ -6,23 +6,7 @@ ASfollowWeb
 </name>
 </assembly>
 <members>
-<member name="F:ASfollowWeb.ABMSteps.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ASfollowWeb.ABMSteps.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ASfollowWeb.ABMActions.Head1">
+<member name="F:ASfollowWeb.ABMActions.Head1">
 	<summary>
 Head1 control.
 </summary>
@@ -31,22 +15,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:ASfollowWeb.ABMActions.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ASfollowWeb.ABMUnits.Head1">
-	<summary>
-Head1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ASfollowWeb.ABMUnits.form1">
 	<summary>
 form1 control.
 </summary>
@@ -79,6 +47,38 @@ To modify move field declaration from designer file to code-behind file.
  Module used to define the properties that are available in the My Namespace for Web projects.
  </summary>
 	<remarks></remarks>
+</member><member name="F:ASfollowWeb.ABMUnits.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMUnits.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMSteps.Head1">
+	<summary>
+Head1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMSteps.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:ASfollowWeb._Default.form1">
 	<summary>
 form1 control.
@@ -122,6 +122,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:ASfollowWeb._Default.btnGoToActions">
 	<summary>
 btnGoToActions control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb._Default.deleteUnit">
+	<summary>
+deleteUnit control.
 </summary>
 	<remarks>
 Auto-generated field.

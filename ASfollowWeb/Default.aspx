@@ -10,6 +10,7 @@
 <head runat="server">
     <title>ASfollow - De la siguiente manera</title>
     <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
+    <link rel="stylesheet" type="text/css" href="/data/css/General.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,11 +23,12 @@
     <div class="centralContent">
         
         <asp:Button runat="server" ID="btnGoToActions" style="display:none;" OnClick="btnGoToActions_Click" CommandArgument="" />
+        <asp:Button runat="server" ID="deleteUnit" style="display:none;" OnClick="deleteUnit_Click" Text="" />
         <asp:HiddenField runat="server" ID="unitIdHidden" value="" />
 
         <%For Each unit As Entity.unit In AllServices.getInstance().getUnits()%>
-            <div class="boxResume" onclick="document.getElementById('unitIdHidden').value='<%=unit.unit_id.ToString()%>';document.getElementById('<%= btnGoToActions.ClientID%>').click()">
-                <table class="tableResume">
+            <div class="boxResume">
+                <table class="tableResume" onclick="document.getElementById('unitIdHidden').value='<%=unit.unit_id.ToString()%>';document.getElementById('<%= btnGoToActions.ClientID%>').click()">
                     <tr class="boxResume-rowInit">
                         <td><%=unit.name.ToUpper()%></td>
                     </tr>
@@ -37,6 +39,7 @@
                         <td>$<%=AllServices.getInstance().getTotalAmountByUnitId(unit.unit_id)%></td>
                     </tr>
                 </table>
+                <a href="#" onclick="document.getElementById('unitIdHidden').value='<%=unit.unit_id.ToString()%>';document.getElementById('<%= deleteUnit.ClientID%>').click();">Borrar</a>
             </div>
         <%Next%>
     </div>
