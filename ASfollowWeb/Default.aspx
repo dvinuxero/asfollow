@@ -32,7 +32,7 @@
             <div class="boxResume">
                 <table class="tableResume" onclick="document.getElementById('unitIdHidden').value='<%=unit.unit_id.ToString()%>';document.getElementById('<%= btnGoToActions.ClientID%>').click()">
                     <tr class="boxResume-rowInit">
-                        <td><%=unit.name.ToUpper()%></td>
+                        <td><b><%=unit.name.ToUpper()%></b></td>
                     </tr>
                     <tr>
                         <td><img class="boxResume-picUrl" src="<%=AllServices.getInstance().getPicUrlByUnitType(unit.type_id) %>" /></td>

@@ -1,35 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <asfollow>
-  <unit id="1" name="Local en Capital">
-    <action id="1" name="Pagar impuestos">
-      <step id="1">
-        <text>Alquiler</text>
-        <amount>16000</amount>
-        <description>El alquiler del local</description>
-      </step>
-    </action>
-    <action id="2" name="Arreglos generales">
-      <step id="2">
-        <text>distrito 1</text>
-        <amount>100</amount>
-      </step>
-    </action>
-  </unit>
-  <unit id="2" name="Local en Lanus">
-    <action id="3" name="impuestos">
-      <step id="3">
-        <text>ñuz</text>
-        <amount>103</amount>
-        <description>es mensual</description>
-      </step>
-    </action>
-  </unit>
   <unit id="3" name="Oficina central">
     <action id="4" name="tramites abogado">
       <step id="4">
         <text>sucesion</text>
         <amount>1000</amount>
         <description>vamos que sale</description>
+      </step>
+    </action>
+    <action id="7" name="Pago de sueldos">
+      <step id="12">
+        <text>Asistente Romina</text>
+        <amount>14000</amount>
+        <description>dni 34009321</description>
+      </step>
+      <step id="13">
+        <text>Asistente Juana</text>
+        <amount>8000</amount>
+      </step>
+    </action>
+    <action id="8" name="Pedido de stock y presupuesto">
+      <step id="15">
+        <text>Servilletas de colores</text>
+        <amount>200</amount>
+        <description>x 170 unidades</description>
+      </step>
+    </action>
+  </unit>
+  <unit id="4" name="Local en el Centro">
+    <action id="5" name="Impuestos" />
+    <action id="6" name="Presentacion AFIP" />
+  </unit>
+  <unit id="5" name="Local en Avellaneda">
+    <action id="9" name="Impuestos" />
+    <action id="10" name="Arreglos">
+      <step id="19">
+        <text>Medianera humedad</text>
+        <description>Presupuesto y compra de materiales. Consultar con Juan A.</description>
       </step>
     </action>
   </unit>
