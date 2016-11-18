@@ -45,6 +45,13 @@ Namespace ASfollowService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/shareInfoUrgent", ReplyAction:="*")>  _
         Function shareInfoUrgentAsync(ByVal request As ASfollowService.shareInfoUrgentRequest) As System.Threading.Tasks.Task(Of ASfollowService.shareInfoUrgentResponse)
+        
+        'CODEGEN: Generating message contract since element name exportXmlResult from namespace http://tempuri.org/ is not marked nillable
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/exportXml", ReplyAction:="*")>  _
+        Function exportXml(ByVal request As ASfollowService.exportXmlRequest) As ASfollowService.exportXmlResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/exportXml", ReplyAction:="*")>  _
+        Function exportXmlAsync(ByVal request As ASfollowService.exportXmlRequest) As System.Threading.Tasks.Task(Of ASfollowService.exportXmlResponse)
     End Interface
     
     <System.Diagnostics.DebuggerStepThroughAttribute(),  _
@@ -319,6 +326,74 @@ Namespace ASfollowService
         End Sub
     End Class
     
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class exportXmlRequest
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="exportXml", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ASfollowService.exportXmlRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ASfollowService.exportXmlRequestBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.Runtime.Serialization.DataContractAttribute()>  _
+    Partial Public Class exportXmlRequestBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.ServiceModel.MessageContractAttribute(IsWrapped:=false)>  _
+    Partial Public Class exportXmlResponse
+        
+        <System.ServiceModel.MessageBodyMemberAttribute(Name:="exportXmlResponse", [Namespace]:="http://tempuri.org/", Order:=0)>  _
+        Public Body As ASfollowService.exportXmlResponseBody
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal Body As ASfollowService.exportXmlResponseBody)
+            MyBase.New
+            Me.Body = Body
+        End Sub
+    End Class
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced),  _
+     System.Runtime.Serialization.DataContractAttribute([Namespace]:="http://tempuri.org/")>  _
+    Partial Public Class exportXmlResponseBody
+        
+        <System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue:=false, Order:=0)>  _
+        Public exportXmlResult As String
+        
+        Public Sub New()
+            MyBase.New
+        End Sub
+        
+        Public Sub New(ByVal exportXmlResult As String)
+            MyBase.New
+            Me.exportXmlResult = exportXmlResult
+        End Sub
+    End Class
+    
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface ASfollowServiceSoapChannel
         Inherits ASfollowService.ASfollowServiceSoap, System.ServiceModel.IClientChannel
@@ -440,6 +515,29 @@ Namespace ASfollowService
             Dim inValue As ASfollowService.shareInfoUrgentRequest = New ASfollowService.shareInfoUrgentRequest()
             inValue.Body = New ASfollowService.shareInfoUrgentRequestBody()
             Return CType(Me,ASfollowService.ASfollowServiceSoap).shareInfoUrgentAsync(inValue)
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ASfollowService_ASfollowServiceSoap_exportXml(ByVal request As ASfollowService.exportXmlRequest) As ASfollowService.exportXmlResponse Implements ASfollowService.ASfollowServiceSoap.exportXml
+            Return MyBase.Channel.exportXml(request)
+        End Function
+        
+        Public Function exportXml() As String
+            Dim inValue As ASfollowService.exportXmlRequest = New ASfollowService.exportXmlRequest()
+            inValue.Body = New ASfollowService.exportXmlRequestBody()
+            Dim retVal As ASfollowService.exportXmlResponse = CType(Me,ASfollowService.ASfollowServiceSoap).exportXml(inValue)
+            Return retVal.Body.exportXmlResult
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function ASfollowService_ASfollowServiceSoap_exportXmlAsync(ByVal request As ASfollowService.exportXmlRequest) As System.Threading.Tasks.Task(Of ASfollowService.exportXmlResponse) Implements ASfollowService.ASfollowServiceSoap.exportXmlAsync
+            Return MyBase.Channel.exportXmlAsync(request)
+        End Function
+        
+        Public Function exportXmlAsync() As System.Threading.Tasks.Task(Of ASfollowService.exportXmlResponse)
+            Dim inValue As ASfollowService.exportXmlRequest = New ASfollowService.exportXmlRequest()
+            inValue.Body = New ASfollowService.exportXmlRequestBody()
+            Return CType(Me,ASfollowService.ASfollowServiceSoap).exportXmlAsync(inValue)
         End Function
     End Class
 End Namespace

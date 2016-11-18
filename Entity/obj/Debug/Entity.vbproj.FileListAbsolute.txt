@@ -4,7 +4,6 @@ C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\Entity.pdb
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\Entity.xml
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\EntityFramework.dll
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\bin\Debug\EntityFramework.xml
-C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.vbprojResolveAssemblyReference.cache
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.Resources.resources
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.vbproj.GenerateResource.Cache
 C:\Users\mladmin\Documents\GitHub\asfollow\ASfollow\Entity\obj\Debug\Entity.dll

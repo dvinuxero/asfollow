@@ -1,6 +1,7 @@
 ﻿Imports System.Web.Services
 Imports System.Web.Services.Protocols
 Imports System.ComponentModel
+Imports System.Xml
 
 Imports Business
 
@@ -34,6 +35,11 @@ Public Class ASfollowService
         EmailService.getInstance().shareInfoUrgent()
 
         Return Now.ToString()
+    End Function
+
+    <WebMethod()> _
+    Public Function exportXml() As String
+        Return ExportXmlService.getInstance().exportXml()
     End Function
 
 End Class

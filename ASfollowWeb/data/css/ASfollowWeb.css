@@ -53,6 +53,12 @@ body {
     background-position: center;
 }
 
+.exportXmlPic {
+    background-image: url('http://static1.knicket.com/play_wpx7g_x80_icon_2_download-shortcut.png');
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
 .refreshPic {
     background-image: url('http://i67.tinypic.com/qyyhsp_th.jpg');
     background-repeat: no-repeat;

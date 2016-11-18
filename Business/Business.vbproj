@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="ActionBO.vb" />
     <Compile Include="EmailService.vb" />
+    <Compile Include="ExportXmlService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

@@ -6,7 +6,15 @@ ASfollowWeb
 </name>
 </assembly>
 <members>
-<member name="F:ASfollowWeb.ABMActions.Head1">
+<member name="F:ASfollowWeb.export.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb.ABMActions.Head1">
 	<summary>
 Head1 control.
 </summary>
@@ -114,6 +122,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:ASfollowWeb._Default.addNewUnit">
 	<summary>
 addNewUnit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ASfollowWeb._Default.exportToXml">
+	<summary>
+exportToXml control.
 </summary>
 	<remarks>
 Auto-generated field.

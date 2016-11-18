@@ -199,4 +199,8 @@ Public Class AllServices
         stepService.addStep(actionId, text, tagId, priority, cron, amount, checked, description)
     End Sub
 
+    Public Function exportXml() As String
+        Return asfollowService.exportXml()
+    End Function
+
 End Class

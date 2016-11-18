@@ -7,6 +7,7 @@
     <title>Actions - <%=AllServices.getInstance().getUnitName(Long.Parse(Request.QueryString.Get("unit_id"))) %></title>
     <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
     <link rel="stylesheet" type="text/css" href="/data/css/General.css" />
+    <link href="/data/photos/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <script type="text/ecmascript">
         function setStepChecked(divStepId) {

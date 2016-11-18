@@ -89,6 +89,7 @@
     <Content Include="data\css\ASfollowWeb.css" />
     <Content Include="data\css\General.css" />
     <Content Include="Default.aspx" />
+    <Content Include="export.xml" />
     <Content Include="Service References\ActionService\ActionService.disco" />
     <Content Include="Service References\ActionService\ASfollowWeb.ActionService.action.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -128,6 +129,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.shareInfoUrgentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ASfollowService\ASfollowWeb.ASfollowService.exportXmlResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\ASfollowService\configuration91.svcinfo" />
@@ -261,6 +265,12 @@
     </Compile>
     <Compile Include="Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="export.xml.designer.vb">
+      <DependentUpon>export.xml.vb</DependentUpon>
+    </Compile>
+    <Compile Include="export.xml.vb">
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />

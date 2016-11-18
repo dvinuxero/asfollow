@@ -11,6 +11,7 @@
     <title>ASfollow - De la siguiente manera</title>
     <link rel="stylesheet" type="text/css" href="/data/css/ASfollowWeb.css" />
     <link rel="stylesheet" type="text/css" href="/data/css/General.css" />
+    <link href="/data/photos/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,6 +20,7 @@
     <asp:Button runat="server" ID="btnShareInfo" CssClass="generalAction sharePic" OnClick="shareInfo_Click" Text="" ToolTip="Enviar acciones repetitivas"/>
     <asp:Button runat="server" ID="btnShareUrgentInfo" CssClass="generalAction shareUrgentPic" OnClick="shareUrgentInfo_Click" Text="" ToolTip="Enviar acciones urgentes"/>
     <asp:Button runat="server" ID="addNewUnit" CssClass="generalAction addUnitPic" OnClick="addNewUnit_Click" Text="" ToolTip="Agregar Unidad"/>
+    <asp:Button runat="server" ID="exportToXml" CssClass="generalAction exportXmlPic" OnClick="exportToXml_Click" Text="" ToolTip="Exportar a XML"/>
 
     <div class="centralContent">
         

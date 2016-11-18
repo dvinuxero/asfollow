@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<asfollow>
+  <unit id="1" name="Local en Capital">
+    <action id="1" name="Pagar impuestos">
+      <step id="1">
+        <text>Alquiler</text>
+        <amount>16000</amount>
+        <description>El alquiler del local</description>
+      </step>
+    </action>
+    <action id="2" name="Arreglos generales">
+      <step id="2">
+        <text>distrito 1</text>
+        <amount>100</amount>
+      </step>
+    </action>
+  </unit>
+  <unit id="2" name="Local en Lanus">
+    <action id="3" name="impuestos">
+      <step id="3">
+        <text>ñuz</text>
+        <amount>103</amount>
+        <description>es mensual</description>
+      </step>
+    </action>
+  </unit>
+  <unit id="3" name="Oficina central">
+    <action id="4" name="tramites abogado">
+      <step id="4">
+        <text>sucesion</text>
+        <amount>1000</amount>
+        <description>vamos que sale</description>
+      </step>
+    </action>
+  </unit>
+</asfollow>

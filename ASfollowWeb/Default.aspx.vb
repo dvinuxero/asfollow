@@ -1,4 +1,6 @@
-﻿Imports Entity
+﻿Imports System.Xml
+Imports System.Text
+Imports Entity
 
 Public Class _Default
     Inherits System.Web.UI.Page
@@ -22,11 +24,19 @@ Public Class _Default
         AllServices.getInstance().refreshSteps()
     End Sub
 
+    Protected Sub addNewUnit_Click(sender As Object, e As EventArgs) Handles addNewUnit.Click
+        Response.Redirect("/admin/ABMUnits.aspx")
+    End Sub
+
     Protected Sub deleteUnit_Click(sender As Object, e As EventArgs) Handles deleteUnit.Click
         AllServices.getInstance().deleteUnit(Long.Parse(unitIdHidden.Value))
     End Sub
 
-    Protected Sub addNewUnit_Click(sender As Object, e As EventArgs) Handles addNewUnit.Click
-        Response.Redirect("/admin/ABMUnits.aspx")
+    Protected Sub exportToXml_Click(sender As Object, e As EventArgs) Handles exportToXml.Click
+        Dim document As New XmlDocument()
+        document.LoadXml(AllServices.getInstance().exportXml())
+        document.Save(Server.MapPath("export.xml"))
+
+        Response.Redirect("export.xml")
     End Sub
 End Class
