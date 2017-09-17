@@ -15,7 +15,7 @@ Public Class EmailService
         Me.smtpServer = New SmtpClient()
         Me.mail = New MailMessage()
 
-        Me.smtpServer.Credentials = New NetworkCredential("asfollow.info@gmail.com", "Ml34318438")
+        Me.smtpServer.Credentials = New NetworkCredential("asfollow.info@gmail.com", "")
         Me.smtpServer.Port = 587
         Me.smtpServer.Host = "smtp.gmail.com"
         Me.smtpServer.EnableSsl = True
@@ -45,7 +45,7 @@ Public Class EmailService
 
     Private Sub prepareInfo()
         Me.mail.From = New MailAddress("asfollow.info@gmail.com")
-        Me.mail.To.Add("villanustre@gmail.com")
+        Me.mail.To.Add("mail")
         Me.mail.IsBodyHtml = True
     End Sub
 
